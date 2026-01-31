@@ -221,6 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 446628093}
   - component: {fileID: 446628092}
+  - component: {fileID: 446628094}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -240,31 +241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f0d095f03ccf27429dc45e2bae9c5f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::zebraPuzzle
-  suspects:
-  - species: 
-    drink: 
-    food: 
-    smoke: 
-    Hobby: 
-    Pet: 
-    MaritalStatus: 
-    isKiller: 0
-  - species: 
-    drink: 
-    food: 
-    smoke: 
-    Hobby: 
-    Pet: 
-    MaritalStatus: 
-    isKiller: 0
-  - species: 
-    drink: 
-    food: 
-    smoke: 
-    Hobby: 
-    Pet: 
-    MaritalStatus: 
-    isKiller: 0
   clues:
   - 
   - 
@@ -284,6 +260,131 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &446628094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446628091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e83b2cb6cad426c992c31e50dd7b54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AssignTraits
+  charaName: 
+  partyMembers:
+  - Phantom
+  - Mummy
+  - Vampire
+  - Centaur
+  - Werewolf
+  - Alien
+  favDrink:
+  - Water
+  - Wine
+  - Cocktail
+  - Beer
+  - Margarita
+  - Vodka
+  favFood:
+  - Cucumber
+  - Bread
+  - Sausage Roll
+  - Finger Cheese
+  - Egg Bites
+  - Shrimp
+  favSmoke:
+  - Yes
+  - No
+  - Often
+  - Rarely
+  - At Partys
+  - Not Recently
+  favHobby:
+  - Philanthropy
+  - Painting
+  - Writing
+  - Equestrianism
+  - Croquet
+  - Gambling
+  favRelationship:
+  - Single
+  - Married
+  - Dating
+  - Cheating
+  - Its Complicated
+  - Divorced
+  favPet:
+  - Cat
+  - Dog
+  - Fish
+  - Horse
+  - Bird
+  - Lizard
+  chosenChara: 
+  chosenDrink: 
+  chosenFood: 
+  chosenSmoke: 
+  chosenHobby: 
+  chosenRelationship: 
+  chosenPet: 
+  charaSize: 0
+  drinkSize: 0
+  foodSize: 0
+  smokeSize: 0
+  hobbySize: 0
+  relationshipSize: 0
+  petSize: 0
+  iterator: 1
+  nameOne: 
+  speciesOne: 
+  drinkOne: 
+  foodOne: 
+  smokerOne: 
+  relationshipOne: 
+  hobbyOne: 
+  petOne: 
+  nameTwo: 
+  speciesTwo: 
+  drinkTwo: 
+  foodTwo: 
+  smokerTwo: 
+  relationshipTwo: 
+  hobbyTwo: 
+  petTwo: 
+  nameThree: 
+  speciesThree: 
+  drinkThree: 
+  foodThree: 
+  smokerThree: 
+  relationshipThree: 
+  hobbyThree: 
+  petThree: 
+  nameFour: 
+  speciesFour: 
+  drinkFour: 
+  foodFour: 
+  smokerFour: 
+  relationshipFour: 
+  hobbyFour: 
+  petFour: 
+  nameFive: 
+  speciesFive: 
+  drinkFive: 
+  foodFive: 
+  smokerFive: 
+  relationshipFive: 
+  hobbyFive: 
+  petFive: 
+  nameSix: 
+  speciesSix: 
+  drinkSix: 
+  foodSix: 
+  smokerSix: 
+  relationshipSix: 
+  hobbySix: 
+  petSix: 
 --- !u!1 &1469599881
 GameObject:
   m_ObjectHideFlags: 0
