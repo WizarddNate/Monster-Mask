@@ -25,19 +25,19 @@ public class ZebraPuzzleRooms : MonoBehaviour
         { "Phantom","Vampire","Werewolf","Alien","Mummy","Centaur" };
 
     private List<string> drinks = new List<string>
-        { "water","mysterious red liquids","bloody mary","poison","mystery potion","juice" };
+        { "water","wine","beer","cocktail","margarita","vodka" };
 
     private List<string> foods = new List<string>
-        { "raw meat","dirt","ghost sandwich","worms","insects","ancient grains" };
+        { "cucumber","bread","sausage roll","finger cheese","egg bites","shrimp" };
 
     private List<string> smokes = new List<string>
-        { "cursed cigar","enchanted pipe","death cigarette","ghost weed","nothing","bubble pipe" };
+        { "yes","no","often","rarely","at partys","not recently" };
 
     private List<string> Hobby = new List<string>
-        { "painting","sculpting","dancing","singing","reading","rotting away in a crypt" };
+        { "philanthropy","painting","writing","equestrianism","croquet","gambling" };
 
     private List<string> Pets = new List<string>
-        { "black cat","owl","bat","spider","rat","snake" };
+        { "cat","dog","fish", "horse","bird","lizard" };
 
     private List<string> MaritalStatus = new List<string>
         { "Single","Married","Divorced","non-married partners","It's complicated","Cheating" };
@@ -133,7 +133,7 @@ public class ZebraPuzzleRooms : MonoBehaviour
         {
             new AttributePick { getter = x => x.drink, describe = v => $"drinks {v}" },
             new AttributePick { getter = x => x.food, describe = v => $"eats {v}" },
-            new AttributePick { getter = x => x.Pet, describe = v => $"keeps a {v}" },
+            new AttributePick { getter = x => x.Pet, describe = v => $"has a {v}" },
             new AttributePick { getter = x => x.Hobby, describe = v => $"likes {v}" },
             new AttributePick { getter = x => x.smoke, describe = v => $"smokes {v}" },
             new AttributePick { getter = x => x.MaritalStatus, describe = v => $"has a relationship status of {v}" }
@@ -150,20 +150,20 @@ public class ZebraPuzzleRooms : MonoBehaviour
         clues.Add($"The {s4.species} {clue2.describe(clue2.getter(s4))}.");
         clues.Add($"The {s3.species} {clue2.describe(clue2.getter(s3))}.");
         clues.Add($"The monster who {clue3.describe(clue3.getter(s2))} also {clue1.describe(clue1.getter(s2))}.");
-        clues.Add($"The monster who {clue1.describe(clue1.getter(s4))} is somewhere to the right of the monster who {clue2.describe(clue2.getter(s3))}.");
-        clues.Add($"The monster who {clue3.describe(clue3.getter(s1))} is immediately to the left of the monster who {clue1.describe(clue1.getter(s2))}.");
+        clues.Add($"The monster who {clue1.describe(clue1.getter(s4))} is somewhere to the right of the monster who {clue3.describe(clue3.getter(s3))}.");
+        clues.Add($"The monster who {clue2.describe(clue2.getter(s1))} is immediately to the left of the monster who {clue1.describe(clue1.getter(s2))}.");
         clues.Add($"The {s1.species} {clue4.describe(clue4.getter(s1))}.");
         clues.Add($"The monster who {clue3.describe(clue3.getter(s3))} is immediately to the right of the monster who {clue4.describe(clue4.getter(s2))}.");
         clues.Add($"The monster who {clue4.describe(clue4.getter(s4))} also {clue3.describe(clue3.getter(s4))}.");
 
         if (s1.isKiller)
-            clues.Add($"The killer drinks {clue3.describe(clue3.getter(s1))}.");
+            clues.Add($"The killer {clue3.describe(clue3.getter(s1))}.");
         else if (s2.isKiller)
-            clues.Add($"The killer eats {clue2.describe(clue2.getter(s2))}.");
+            clues.Add($"The killer {clue2.describe(clue2.getter(s2))}.");
         else if (s3.isKiller)
-            clues.Add($"The killer drinks {clue3.describe(clue3.getter(s3))}.");
+            clues.Add($"The killer {clue3.describe(clue3.getter(s3))}.");
         else
-            clues.Add($"The killer likes {clue4.describe(clue4.getter(s4))}.");
+            clues.Add($"The killer {clue4.describe(clue4.getter(s4))}.");
     }
 
 

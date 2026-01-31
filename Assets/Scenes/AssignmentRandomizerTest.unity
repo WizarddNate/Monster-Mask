@@ -186,12 +186,12 @@ MonoBehaviour:
   - Egg Bites
   - Shrimp
   favSmoke:
-  - True
-  - False
-  - True
-  - False
-  - True
-  - False
+  - Yes
+  - No
+  - Often
+  - Rarely
+  - At Partys
+  - Not Recently
   favHobby:
   - Philanthropy
   - Painting
