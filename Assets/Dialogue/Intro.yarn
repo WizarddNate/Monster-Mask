@@ -19,8 +19,7 @@ Narrator: Whatever man.
 title: Red
 ---
 Narrator: I like your vibe kid. I think you and I can talk for a while.
-Narrator: Actually kid - real quick - what's your name again?
-<<set $playerName to "Nathan">>
+Narrator: Actually - real quick - what's your name again? 
 
 Narrator: Alright {$playerName}, what is your favorite red object?
 ->  Apples

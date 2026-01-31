@@ -56,7 +56,7 @@ public class ZebraPuzzleRooms : MonoBehaviour
 
     void CreateSuspects()
     {
-        suspects.Clear();
+        //suspects.Clear();
         foreach (string s in suspectspecies)
             suspects.Add(new Suspect { species = s });
     }
@@ -122,7 +122,7 @@ public class ZebraPuzzleRooms : MonoBehaviour
 
         void GenerateRoomClues()
     {
-        clues.Clear();
+        //clues.Clear();
 
         Suspect s1 = suspects[0];
         Suspect s2 = suspects[1];
