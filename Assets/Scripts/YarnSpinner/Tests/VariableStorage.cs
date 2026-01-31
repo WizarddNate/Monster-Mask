@@ -23,13 +23,15 @@ public class VariableStorage : MonoBehaviour
             string clue1 = zPR.clues[0];
             Debug.Log("CLUE 1: " + clue1);
         }
-        
-        
+        */
 
         runner = GameObject.FindFirstObjectByType<DialogueRunner>();
         runner.AddFunction<string>("get_player_name", GetPlayerName);
         runner.AddFunction<string>("get_clue_one", GetClueOne);
+
+        runner.VariableStorage.SetValue("$player_coins", 10);
     }
+
 
     private static string GetPlayerName()
     {
