@@ -1,0 +1,34 @@
+﻿title: Intro
+---
+<<declare $playerName = "Player">>
+
+Narrator: This is an example of a Yarn Spinner script. Write your dialogue here!
+Narrator: I think that this plugin will be very exciting! It might completely change the game if I'm being real.
+Pop quiz: What color am I thinking of?
+->  Red
+    Narrator: Red is right!
+    <<detour Red>>
+->  Blue
+    Narrator:Blue? ew!
+
+Narrator: ...
+<<wait 2>>
+Narrator: Whatever man.
+===
+
+title: Red
+---
+Narrator: I like your vibe kid. I think you and I can talk for a while.
+Narrator: Actually kid - real quick - what's your name again?
+<<set $playerName to "Nathan">>
+
+Narrator: Alright {$playerName}, what is your favorite red object?
+->  Apples
+->  Fire hydrants
+->  Roses
+->  Stop signs
+->  Rubies
+
+Narrator: Aw, Well... I don't really like any of those objects.
+===
+
