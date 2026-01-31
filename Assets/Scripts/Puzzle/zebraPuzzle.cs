@@ -25,19 +25,19 @@ public class ZebraPuzzleRooms : MonoBehaviour
         { "Phantom","Vampire","Werewolf","Alien","Mummy","Centaur" };
 
     private List<string> drinks = new List<string>
-        { "water","mysterious red liquids","bloody mary","poison","mystery potion","juice" };
+        { "water","wine","beer","cocktail","margarita","vodka" };
 
     private List<string> foods = new List<string>
-        { "raw meat","dirt","ghost sandwich","worms","insects","ancient grains" };
+        { "cucumber","bread","sausage roll","finger cheese","egg bites","shrimp" };
 
     private List<string> smokes = new List<string>
-        { "cursed cigar","enchanted pipe","death cigarette","ghost weed","nothing","bubble pipe" };
+        { "yes","no","often","rarely","at partys","not recently" };
 
     private List<string> Hobby = new List<string>
-        { "painting","sculpting","dancing","singing","reading","rotting away in a crypt" };
+        { "philanthropy","painting","writing","equestrianism","croquet","gambling" };
 
     private List<string> Pets = new List<string>
-        { "black cat","owl","bat","spider","rat","snake" };
+        { "cat","dog","fish", "horse","bird","lizard" };
 
     private List<string> MaritalStatus = new List<string>
         { "Single","Married","Divorced","non-married partners","It's complicated","Cheating" };
