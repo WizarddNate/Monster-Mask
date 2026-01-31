@@ -30,6 +30,7 @@ public class AssignTraits : MonoBehaviour
     public int hobbySize;
     public int relationshipSize;
     public int petSize;
+    public int iterator = 1;
 
     
 
@@ -130,15 +131,97 @@ public class AssignTraits : MonoBehaviour
         var monster = new Monster();
 
         monster.name = charaName;
-        monster.race = chosenChara;
+        monster.species = chosenChara;
         monster.drink = chosenDrink;
         monster.food = chosenFood;
         monster.smoker = chosenSmoke;
         monster.hobby = chosenHobby;
         monster.relationship = chosenRelationship;
         monster.pet = chosenPet;
+
+
+        //monster.iterator = iterator;
+        
         
         monster.Intro();
+
+        if (iterator == 1)
+        {
+            nameOne =  charaName;
+            speciesOne = chosenChara;
+            drinkOne = chosenDrink;
+            foodOne = chosenFood;
+            smokerOne = chosenSmoke;
+            hobbyOne = chosenHobby;
+            relationshipOne = chosenRelationship;
+            petOne = chosenPet;
+        }
+        else if (iterator == 2)
+        {
+            nameTwo =  charaName;
+            speciesTwo = chosenChara;
+            drinkTwo = chosenDrink;
+            foodTwo = chosenFood;
+            smokerTwo = chosenSmoke;
+            hobbyTwo = chosenHobby;
+            relationshipTwo = chosenRelationship;
+            petTwo = chosenPet;
+        }
+        else if (iterator == 3)
+        {
+            nameThree =  charaName;
+            speciesThree = chosenChara;
+            drinkThree = chosenDrink;
+            foodThree = chosenFood;
+            smokerThree = chosenSmoke;
+            hobbyThree = chosenHobby;
+            relationshipThree = chosenRelationship;
+            petThree = chosenPet;
+        }
+        else if (iterator == 4)
+        {
+            nameFour =  charaName;
+            speciesFour = chosenChara;
+            drinkFour = chosenDrink;
+            foodFour = chosenFood;
+            smokerFour = chosenSmoke;
+            hobbyFour = chosenHobby;
+            relationshipFour = chosenRelationship;
+            petFour = chosenPet; 
+        }
+        else if (iterator == 5)
+        {
+            nameFive =  charaName;
+            speciesFive = chosenChara;
+            drinkFive = chosenDrink;
+            foodFive = chosenFood;
+            smokerFive = chosenSmoke;
+            hobbyFive = chosenHobby;
+            relationshipFive = chosenRelationship;
+            petFive = chosenPet;   
+        }
+        else if (iterator == 6)
+        {
+            nameSix =  charaName;
+            speciesSix = chosenChara;
+            drinkSix = chosenDrink;
+            foodSix = chosenFood;
+            smokerSix = chosenSmoke;
+            hobbySix = chosenHobby;
+            relationshipSix = chosenRelationship;
+            petSix = chosenPet; 
+        }
+        else
+        {
+            Debug.Log("hah?");
+        }
+        
+        if (iterator == 6)
+        {
+            Debug.Log(message:$"{nameOne}, {speciesOne}, {drinkOne}, {foodOne}, {smokerOne}, {relationshipOne}, {hobbyOne}, {petOne}, {nameTwo}, {nameThree}, {nameFour}, {nameFive}, {nameSix}");
+        }
+
+        iterator++;
     }
 
 
@@ -146,4 +229,71 @@ public class AssignTraits : MonoBehaviour
     {
         
     }
+
+
+
+
+
+    public string nameOne;
+    public string speciesOne;
+    public string drinkOne;
+    public string foodOne;
+    public string smokerOne;
+    public string relationshipOne;
+    public string hobbyOne;
+    public string petOne;
+
+
+    public string nameTwo;
+    public string speciesTwo;
+    public string drinkTwo;
+    public string foodTwo;
+    public string smokerTwo;
+    public string relationshipTwo;
+    public string hobbyTwo;
+    public string petTwo;
+
+
+    public string nameThree;
+    public string speciesThree;
+    public string drinkThree;
+    public string foodThree;
+    public string smokerThree;
+    public string relationshipThree;
+    public string hobbyThree;
+    public string petThree;
+
+
+    public string nameFour;
+    public string speciesFour;
+    public string drinkFour;
+    public string foodFour;
+    public string smokerFour;
+    public string relationshipFour;
+    public string hobbyFour;
+    public string petFour;
+
+
+    public string nameFive;
+    public string speciesFive;
+    public string drinkFive;
+    public string foodFive;
+    public string smokerFive;
+    public string relationshipFive;
+    public string hobbyFive;
+    public string petFive;
+
+
+    public string nameSix;
+    public string speciesSix;
+    public string drinkSix;
+    public string foodSix;
+    public string smokerSix;
+    public string relationshipSix;
+    public string hobbySix;
+    public string petSix;
+
+
+
+
 }
