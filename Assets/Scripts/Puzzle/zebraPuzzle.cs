@@ -45,7 +45,7 @@ public class ZebraPuzzleRooms : MonoBehaviour
     void Start()
     {
         CreateSuspects();
-        AssignAttributesAndRooms();
+        AssignAttributes();
         ChooseKiller();
 
         suspects.Sort((a, b) => a.Room.CompareTo(b.Room));
@@ -56,12 +56,12 @@ public class ZebraPuzzleRooms : MonoBehaviour
 
     void CreateSuspects()
     {
-        //suspects.Clear();
+        suspects.Clear();
         foreach (string s in suspectspecies)
             suspects.Add(new Suspect { species = s });
     }
 
-    void AssignAttributesAndRooms()
+    void AssignAttributes()
     {
         List<string> d = new List<string>(drinks);
         List<string> f = new List<string>(foods);
@@ -73,26 +73,37 @@ public class ZebraPuzzleRooms : MonoBehaviour
 
         foreach (Suspect suspect in suspects)
         {
-            suspect.drink = PickAndRemove(d);
-            suspect.food = PickAndRemove(f);
-            suspect.smoke = PickAndRemove(s);
-            suspect.Hobby = PickAndRemove(h);
-            suspect.Pet = PickAndRemove(p);
-            suspect.MaritalStatus = PickAndRemove(m);
-            suspect.Room = PickAndRemove(rooms);
+            suspect.drink = PickAndRemoveString(d);
+            suspect.food = PickAndRemoveString(f);
+            suspect.smoke = PickAndRemoveString(s);
+            suspect.Hobby = PickAndRemoveString(h);
+            suspect.Pet = PickAndRemoveString(p);
+            suspect.MaritalStatus = PickAndRemoveString(m);
+            suspect.Room = PickAndRemoveInt(rooms);
         }
     }
 
-    string PickAndRemove(List<string> list)
+    string PickAndRemoveString(List<string> list)
     {
+        if (list.Count == 0)
+        {
+            Debug.LogError("Attempted to pick from empty string list.");
+            return "";
+        }
+
         int idx = Random.Range(0, list.Count);
         string val = list[idx];
         list.RemoveAt(idx);
         return val;
     }
 
-    int PickAndRemove(List<int> list)
+    int PickAndRemoveInt(List<int> list)
     {
+        if (list.Count == 0)
+        {
+            Debug.LogError("Attempted to pick from empty int list.");
+            return -1;
+        }
         int idx = Random.Range(0, list.Count);
         int val = list[idx];
         list.RemoveAt(idx);
@@ -135,7 +146,7 @@ public class ZebraPuzzleRooms : MonoBehaviour
             new AttributePick { getter = x => x.food, describe = v => $"eats {v}" },
             new AttributePick { getter = x => x.Pet, describe = v => $"has a {v}" },
             new AttributePick { getter = x => x.Hobby, describe = v => $"likes {v}" },
-            new AttributePick { getter = x => x.smoke, describe = v => $"smokes {v}" },
+            new AttributePick { getter = x => x.smoke, describe = v => $"has a smoking frequency of {v}" },
             new AttributePick { getter = x => x.MaritalStatus, describe = v => $"has a relationship status of {v}" }
         };
 
@@ -178,16 +189,5 @@ public class ZebraPuzzleRooms : MonoBehaviour
             Debug.Log(c);
 
         Debug.Log("KILLER (debug): " + suspects.Find(s => s.isKiller).species);
-    }
-
-    public void Accuse(string species)
-    {
-        Suspect s = suspects.Find(x => x.species == species);
-        if (s == null)
-            Debug.Log("No such suspect!");
-        else
-            Debug.Log(s.isKiller
-                ? "Correct! You solved the mystery!"
-                : "Wrong accusation. Keep thinking!");
     }
 }
