@@ -150,8 +150,8 @@ public class ZebraPuzzleRooms : MonoBehaviour
         clues.Add($"The {s4.species} {clue2.describe(clue2.getter(s4))}.");
         clues.Add($"The {s3.species} {clue2.describe(clue2.getter(s3))}.");
         clues.Add($"The monster who {clue3.describe(clue3.getter(s2))} also {clue1.describe(clue1.getter(s2))}.");
-        clues.Add($"The monster who {clue1.describe(clue1.getter(s4))} is somewhere to the right of the monster who {clue2.describe(clue2.getter(s3))}.");
-        clues.Add($"The monster who {clue3.describe(clue3.getter(s1))} is immediately to the left of the monster who {clue1.describe(clue1.getter(s2))}.");
+        clues.Add($"The monster who {clue1.describe(clue1.getter(s4))} is somewhere to the right of the monster who {clue3.describe(clue3.getter(s3))}.");
+        clues.Add($"The monster who {clue2.describe(clue2.getter(s1))} is immediately to the left of the monster who {clue1.describe(clue1.getter(s2))}.");
         clues.Add($"The {s1.species} {clue4.describe(clue4.getter(s1))}.");
         clues.Add($"The monster who {clue3.describe(clue3.getter(s3))} is immediately to the right of the monster who {clue4.describe(clue4.getter(s2))}.");
         clues.Add($"The monster who {clue4.describe(clue4.getter(s4))} also {clue3.describe(clue3.getter(s4))}.");
