@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using Yarn.Unity;
 
 public class VariableStorage : MonoBehaviour
@@ -8,9 +9,20 @@ public class VariableStorage : MonoBehaviour
     private ZebraPuzzle zPR;
     private AssignTraits asT;
 
-    private static string playerName = "Cleven";
 
     void Start()
+    {
+        StartCoroutine(DelayedStart());
+    }
+
+    IEnumerator DelayedStart()
+    {
+        yield return new WaitForSeconds(0.2f); // wait 2 seconds
+
+        TranslateVars();
+    }
+    
+    void TranslateVars()
     {
         asT = GameObject.FindFirstObjectByType<AssignTraits>();
         zPR = GameObject.FindFirstObjectByType<ZebraPuzzle>();
@@ -28,8 +40,6 @@ public class VariableStorage : MonoBehaviour
         */
 
         runner = GameObject.FindFirstObjectByType<DialogueRunner>();
-        runner.AddFunction<string>("get_player_name", GetPlayerName);
-        runner.AddFunction<string>("get_clue_one", GetClueOne);
 
         //runner.VariableStorage.SetValue("$player_coins", 10);
 
@@ -71,17 +81,25 @@ public class VariableStorage : MonoBehaviour
         runner.VariableStorage.SetValue("$hobbySix", asT.hobbySix);
         runner.VariableStorage.SetValue("$petSix", asT.petSix);
 
-    }
-
-
-    private static string GetPlayerName()
-    {
-        return playerName;
-    }
-
-    private static string GetClueOne()
-    {
-        
-        return null;
+        if (zPR.killerClue == "wwPet")
+        {
+            runner.VariableStorage.SetValue("$killerClue", "wwPet");
+        }
+        else if (zPR.killerClue == "vpDrink")
+        {
+            runner.VariableStorage.SetValue("$killerClue", "vpDrink");
+        }
+        else if (zPR.killerClue == "ctPet")
+        {
+            runner.VariableStorage.SetValue("$killerClue", "ctPet");
+        }
+        else if (zPR.killerClue == "ptHobby")
+        {
+            runner.VariableStorage.SetValue("$killerClue", "ptHobby");
+        }
+        else
+        {
+            Debug.LogError("Killer clue not found");
+        }
     }
 }
