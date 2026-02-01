@@ -59,6 +59,7 @@ public class ZebraPuzzle : MonoBehaviour
         suspects.Add(new Suspect { species = asT.speciesFour });
         suspects.Add(new Suspect { species = asT.speciesFive });
         suspects.Add(new Suspect { species = asT.speciesSix });
+
     }
 
     void AssignAttributesFromAssignTraits()
@@ -85,7 +86,7 @@ public class ZebraPuzzle : MonoBehaviour
 
     void ChooseKiller()
     {
-        int index = Random.Range(0, suspects.Count);
+        int index = Random.Range(0, 4);
         for (int i = 0; i < suspects.Count; i++)
             suspects[i].isKiller = (i == index);
     }
@@ -106,14 +107,14 @@ public class ZebraPuzzle : MonoBehaviour
 
     void GenerateRoomClues()
     {
-        Suspect ww = suspects[4];
+        Suspect ww = suspects[3];
         Suspect vp = suspects[2];
-        Suspect ct = suspects[3];
+        Suspect ct = suspects[1];
         Suspect pt = suspects[0];
 
 
 
-        clues.Add($"The centaur eats {ct.food}.");
+        clues.Add($"The {ct.species} eats {ct.food}.");
         clues.Add($"The phantom drinks {pt.drink}.");
         clues.Add($"The centaur drinks {ct.drink}.");
         clues.Add($"The monster who has a {vp.Pet} also eats {vp.food}.");

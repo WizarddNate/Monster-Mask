@@ -7,7 +7,7 @@ public class AssignTraits : MonoBehaviour
 {
     public string charaName;
 
-    public List<string> partyMembers = new List<string>() { "Phantom", "Mummy", "Vampire", "Centaur", "Werewolf", "Alien" };
+    public List<string> partyMembers = new List<string>() { "Phantom", "Vampire", "Centaur", "Werewolf", "Mummy", "Alien" };
     public List<string> favDrink = new List<string>() { "Water", "Wine", "Cocktail", "Beer", "Margarita", "Vodka" };
     public List<string> favFood = new List<string>() { "Cucumber", "Bread", "Sausage Roll", "Finger Cheese", "Egg Bites", "Shrimp" };
     public List<string> favSmoke = new List<string>() { "Yes", "Never", "Often", "Rarely", "At Partys", "Not Recently" };
@@ -100,10 +100,6 @@ public class AssignTraits : MonoBehaviour
         {
             charaName = "Phan";
         }
-        else if (chosenChara == "Mummy")
-        {
-            charaName = "Mum";
-        }
         else if (chosenChara == "Vampire")
         {
             charaName = "Drac";
@@ -115,6 +111,10 @@ public class AssignTraits : MonoBehaviour
         else if (chosenChara == "Werewolf")
         {
             charaName = "Wally";
+        }
+        else if (chosenChara == "Mummy")
+        {
+            charaName = "Mum";
         }
         else if (chosenChara == "Alien")
         {
