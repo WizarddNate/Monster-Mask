@@ -41,6 +41,36 @@ public class VariableStorage : MonoBehaviour
         runner.VariableStorage.SetValue("$hobbyOne", asT.hobbyOne);
         runner.VariableStorage.SetValue("$petOne", asT.petOne);
 
+        runner.VariableStorage.SetValue("$nameTwo", asT.nameTwo); //asT.speciesTwo
+        runner.VariableStorage.SetValue("$foodTwo", asT.foodTwo);
+        runner.VariableStorage.SetValue("$drinkTwo", asT.drinkTwo);
+        runner.VariableStorage.SetValue("$hobbyTwo", asT.hobbyTwo);
+        runner.VariableStorage.SetValue("$petTwo", asT.petTwo);
+
+        runner.VariableStorage.SetValue("$nameThree", asT.nameThree); //asT.speciesThree
+        runner.VariableStorage.SetValue("$foodThree", asT.foodThree);
+        runner.VariableStorage.SetValue("$drinkThree", asT.drinkThree);
+        runner.VariableStorage.SetValue("$hobbyThree", asT.hobbyThree);
+        runner.VariableStorage.SetValue("$petThree", asT.petThree);
+
+        runner.VariableStorage.SetValue("$nameFour", asT.nameFour); //asT.speciesFour
+        runner.VariableStorage.SetValue("$foodFour", asT.foodFour);
+        runner.VariableStorage.SetValue("$drinkFour", asT.drinkFour);
+        runner.VariableStorage.SetValue("$hobbyFour", asT.hobbyFour);
+        runner.VariableStorage.SetValue("$petFour", asT.petFour);
+
+        runner.VariableStorage.SetValue("$nameFive", asT.nameFive); //asT.speciesFive
+        runner.VariableStorage.SetValue("$foodFive", asT.foodFive);
+        runner.VariableStorage.SetValue("$drinkFive", asT.drinkFive);
+        runner.VariableStorage.SetValue("$hobbyFive", asT.hobbyFive);
+        runner.VariableStorage.SetValue("$petFive", asT.petFive);
+
+        runner.VariableStorage.SetValue("$nameSix", asT.nameSix); //asT.speciesSix
+        runner.VariableStorage.SetValue("$foodSix", asT.foodSix);
+        runner.VariableStorage.SetValue("$drinkSix", asT.drinkSix);
+        runner.VariableStorage.SetValue("$hobbySix", asT.hobbySix);
+        runner.VariableStorage.SetValue("$petSix", asT.petSix);
+
     }
 
 
