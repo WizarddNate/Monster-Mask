@@ -7,17 +7,52 @@
 <<declare $drinkOne = "">>
 <<declare $hobbyOne = "">>
 <<declare $petOne = "">>
+
+<<declare $speciesTwo = "Mummy">>
+<<declare $nameTwo = "">>
+<<declare $foodTwo = "">>
+<<declare $drinkTwo = "">>
+<<declare $hobbyTwo = "">>
+<<declare $petTwo = "">>
+
+<<declare $speciesThree = "Vampire">>
+<<declare $nameThree = "">>
+<<declare $foodThree = "">>
+<<declare $drinkThree = "">>
+<<declare $hobbyThree = "">>
+<<declare $petThree = "">>
+
+<<declare $timesSpokenThree = 0>>
+
+<<declare $speciesFour = "Centaur">>
+<<declare $nameFour = "">>
+<<declare $foodFour = "">>
+<<declare $drinkFour = "">>
+<<declare $hobbyFour = "">>
+<<declare $petFour = "">>
+
+<<declare $speciesFive = "Werewolf">>
+<<declare $nameFive = "">>
+<<declare $foodFive = "">>
+<<declare $drinkFive = "">>
+<<declare $hobbyFive = "">>
+<<declare $petFive = "">>
+
+<<declare $speciesSix = "Alien">>
+<<declare $nameSix = "">>
+<<declare $foodSix = "">>
+<<declare $drinkSix = "">>
+<<declare $hobbySix = "">>
+<<declare $petSix = "">>
 ===
 
 title: ZebraClueTest
 ---
 {$speciesOne}: Hey there detective, staying sharp?
-Phantom: I'm just planning on minding my own in here. I really like the {$foodOne}, it pairs nicely with the {$drinkOne}.
+Phantom: I'm just planning on minding my own in here. I really like the {$foodOne}, it pairs nicely with the {$drinkOne}. Yum!
 {$speciesOne}: Between you and me... Im pretty nervous about this.
 Phantom: But you're really good at what you do. Like I'm good at {$hobbyOne}!
 Phantom: What I'm saying is you've got this. Get back out there detective!
-
-//Vampire: Just between you and me... I heard a rumor that {get_player_name()} only has {$player_coins} coins to his name.
 ===
 
 title: Phantom
@@ -27,12 +62,19 @@ sample text
 
 title: Mummy
 ---
-sample text
+Mummy: Great. The party of the century has been ruined.
+Mummy: Find who did this, and there will be untold riches your way Mr. Blob.
 ===
 
 title: Vampire
 ---
-sample text
+<<if $timesSpokenThree == 0>>
+Vampire: It's a shame what happened to our Zombie friend. It was always nice to share a meal with him.
+<<else>>
+Vampire: I love the {$foodThree}, it's my favorite! 
+Vampire: It pairs so nicely with the {$drinkThree}. Yum!
+<<endif>>
+<<set $timesSpokenThree = $timesSpokenThree + 1>>
 ===
 
 title: Centaur
@@ -42,10 +84,14 @@ sample text
 
 title: Werewolf
 ---
-sample text
+Werewolf: The {$speciesFour} loves to drink {$drinkFour}.
+Werewolf: He's built up quite a tab too! Har har har!
 ===
 
 title: Alien
 ---
-sample text
+=> Alien: GEEPLE.
+=> Alien: GARLORP.
+=> Alien: OURBLE. 
+=> Alien: :D
 ===

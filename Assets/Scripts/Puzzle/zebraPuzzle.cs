@@ -106,10 +106,10 @@ public class ZebraPuzzle : MonoBehaviour
 
     void GenerateRoomClues()
     {
-        Suspect s1 = suspects[0];
-        Suspect s2 = suspects[1];
-        Suspect s3 = suspects[2];
-        Suspect s4 = suspects[3];
+        Suspect s1 = suspects[4];
+        Suspect s2 = suspects[2];
+        Suspect s3 = suspects[3];
+        Suspect s4 = suspects[0];
 
 
 
@@ -122,8 +122,11 @@ public class ZebraPuzzle : MonoBehaviour
         clues.Add($"The {s1.species} likes {s1.Hobby}.");
         clues.Add($"The monster who has a {s3.Pet} is immediately to the right of the monster who {s2.Hobby}.");
         clues.Add($"The monster who likes {s4.Hobby} also has a {s4.Pet}.");
+
+        
         if (s1.isKiller)
             clues.Add($"The killer has a {s1.Pet}.");
+
         else if (s2.isKiller)
             clues.Add($"The killer drinks {s2.drink}.");
         else if (s3.isKiller)
@@ -144,4 +147,53 @@ public class ZebraPuzzle : MonoBehaviour
 
         Debug.Log("KILLER (debug): " + suspects.Find(s => s.isKiller).species);
     }
+
+    public GameObject CorrectPanel;
+    public GameObject WrongPanel;
+    public void AccuseMummy()      
+    {      
+        WrongPanel.SetActive(true);
+    }
+    public void AccuseAlien()      
+    {      
+        WrongPanel.SetActive(true);
+    }
+    public void AccuseWerewolf()      
+    {      
+        if (suspects[4].isKiller)  
+        {  
+            CorrectPanel.SetActive(true);  
+        }  
+        else
+        WrongPanel.SetActive(true);
+    }
+    
+        public void AccusePhantom()      
+    {      
+        if (suspects[0].isKiller)  
+        {  
+            CorrectPanel.SetActive(true);  
+        }  
+        else
+        WrongPanel.SetActive(true);
+    }
+    public void AccuseVampire()      
+    {      
+        if (suspects[2].isKiller)  
+        {  
+            CorrectPanel.SetActive(true);  
+        }  
+        else
+        WrongPanel.SetActive(true);
+    }
+    public void AccuseCentaur()      
+    {      
+        if (suspects[3].isKiller)  
+        {  
+            CorrectPanel.SetActive(true);  
+        }  
+        else
+        WrongPanel.SetActive(true);
+    }
+
 }
