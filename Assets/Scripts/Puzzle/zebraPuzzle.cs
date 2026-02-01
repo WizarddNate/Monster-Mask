@@ -123,7 +123,7 @@ public class ZebraPuzzle : MonoBehaviour
         clues.Add($"The monster who has a {s3.Pet} is immediately to the right of the monster who {s2.Hobby}.");
         clues.Add($"The monster who likes {s4.Hobby} also has a {s4.Pet}.");
 
-
+        
         if (s1.isKiller)
             clues.Add($"The killer has a {s1.Pet}.");
 
@@ -152,6 +152,47 @@ public class ZebraPuzzle : MonoBehaviour
     public GameObject WrongPanel;
     public void AccuseMummy()      
     {      
+        WrongPanel.SetActive(true);
+    }
+    public void AccuseAlien()      
+    {      
+        WrongPanel.SetActive(true);
+    }
+    public void AccuseWerewolf()      
+    {      
+        if (suspects[4].isKiller)  
+        {  
+            CorrectPanel.SetActive(true);  
+        }  
+        else
+        WrongPanel.SetActive(true);
+    }
+    
+        public void AccusePhantom()      
+    {      
+        if (suspects[0].isKiller)  
+        {  
+            CorrectPanel.SetActive(true);  
+        }  
+        else
+        WrongPanel.SetActive(true);
+    }
+    public void AccuseVampire()      
+    {      
+        if (suspects[2].isKiller)  
+        {  
+            CorrectPanel.SetActive(true);  
+        }  
+        else
+        WrongPanel.SetActive(true);
+    }
+    public void AccuseCentaur()      
+    {      
+        if (suspects[3].isKiller)  
+        {  
+            CorrectPanel.SetActive(true);  
+        }  
+        else
         WrongPanel.SetActive(true);
     }
 
