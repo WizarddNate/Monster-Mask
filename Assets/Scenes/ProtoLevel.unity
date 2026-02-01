@@ -277,6 +277,10 @@ PrefabInstance:
       value: Zombie
       objectReference: {fileID: 0}
     - target: {fileID: 5793877517101713290, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
+      propertyPath: popup
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5793877517101713290, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: MonsterName
       value: Alien
       objectReference: {fileID: 0}
@@ -336,7 +340,8 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 97a7e33ed57752b4f9926b7db0623e2b, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5793877517101713290, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
     m_RemovedGameObjects:
     - {fileID: 2430200197380253234, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
     m_AddedGameObjects: []
