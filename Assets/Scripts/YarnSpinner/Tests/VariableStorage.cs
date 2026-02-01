@@ -32,7 +32,14 @@ public class VariableStorage : MonoBehaviour
         runner.AddFunction<string>("get_clue_one", GetClueOne);
 
         //runner.VariableStorage.SetValue("$player_coins", 10);
-        runner.VariableStorage.SetValue("$monster1", "Vampire"); //asT.speciesOne
+
+        /// VARIABLES ///
+
+        runner.VariableStorage.SetValue("$nameOne", asT.nameOne); //asT.speciesOne
+        runner.VariableStorage.SetValue("$foodOne", asT.foodOne);
+        runner.VariableStorage.SetValue("$drinkOne", asT.drinkOne);
+        runner.VariableStorage.SetValue("$hobbyOne", asT.hobbyOne);
+        runner.VariableStorage.SetValue("$petOne", asT.petOne);
 
     }
 
