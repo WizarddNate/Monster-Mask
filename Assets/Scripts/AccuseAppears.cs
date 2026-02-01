@@ -4,8 +4,7 @@ using UnityEngine;
 public class AccuseAppears : MonoBehaviour
 {
     public GameObject popup;
-    public GameObject Buttons;
-    public string MonsterName;
+    public GameObject AccusePanel;
     Collider charCol;
     
     bool isInRange;
@@ -25,10 +24,6 @@ public class AccuseAppears : MonoBehaviour
 
         isInRange = false;
 
-        if (MonsterName == null || MonsterName == "")
-        {
-            Debug.LogError("Dialogue Node not selected for " + gameObject);
-        }
     }
 
     void Update()
@@ -63,6 +58,6 @@ public class AccuseAppears : MonoBehaviour
 
     public void StartDialogue()
     {
-        Buttons.SetActive(true);
+        AccusePanel.SetActive(true);
     }
 }
