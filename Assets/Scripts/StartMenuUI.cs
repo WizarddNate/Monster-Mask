@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 public class StartMenuUI : MonoBehaviour
 {
     [SerializeField] private AudioClip thunder_quit;
+    [SerializeField] private AudioClip[] startGameClips;
     public bool quittersTalk = false;
     public float quitTimer = 0f;
 
     public CanvasGroup ggjLogo;
     public float fadeOutTime = 10.0f;
+
+    public float startTimer = 0f;
+    public bool letsGo = false;
 
 
     void Awake()
@@ -39,7 +43,7 @@ public class StartMenuUI : MonoBehaviour
         }
 
         ggjLogo.alpha = 0f;
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     // public void FadeIn()
@@ -70,8 +74,9 @@ public class StartMenuUI : MonoBehaviour
 
     public void OnStartButton()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        SoundFXManager.instance.PlayRandomSoundFXClip(startGameClips, transform, 1f);
+        letsGo = true;
+        startTimer = 0;
     }
 
     public void OnQuitButton()
@@ -84,10 +89,17 @@ public class StartMenuUI : MonoBehaviour
     void Update()
     {
         quitTimer += Time.deltaTime;
-        if (quitTimer >= 2 && quittersTalk == true)
+        if (quitTimer >= 1.8 && quittersTalk == true)
         {
             Application.Quit();
             Debug.Log ("quit");
+        }
+
+        startTimer += Time.deltaTime; 
+        if (startTimer >= 1 && letsGo == true)
+        {
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex + 1);
         }
     }
 }
