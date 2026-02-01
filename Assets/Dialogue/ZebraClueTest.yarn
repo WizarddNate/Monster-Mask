@@ -10,7 +10,7 @@
 
 <<declare $timesSpokenOne = 0>>
 
-<<declare $speciesTwo = "Mummy">>
+<<declare $speciesTwo = "Vampire">>
 <<declare $nameTwo = "">>
 <<declare $foodTwo = "">>
 <<declare $drinkTwo = "">>
@@ -19,7 +19,7 @@
 
 <<declare $timesSpokenTwo = 0>>
 
-<<declare $speciesThree = "Vampire">>
+<<declare $speciesThree = "Centaur">>
 <<declare $nameThree = "">>
 <<declare $foodThree = "">>
 <<declare $drinkThree = "">>
@@ -28,7 +28,7 @@
 
 <<declare $timesSpokenThree = 0>>
 
-<<declare $speciesFour = "Centaur">>
+<<declare $speciesFour = "Werewolf">>
 <<declare $nameFour = "">>
 <<declare $foodFour = "">>
 <<declare $drinkFour = "">>
@@ -37,7 +37,7 @@
 
 <<declare $timesSpokenFour = 0>>
 
-<<declare $speciesFive = "Werewolf">>
+<<declare $speciesFive = "Mummy">>
 <<declare $nameFive = "">>
 <<declare $foodFive = "">>
 <<declare $drinkFive = "">>
@@ -54,6 +54,8 @@
 <<declare $petSix = "">>
 
 <<declare $timesSpokenSix = 0>>
+
+<<declare $killerClue = "">>
 ===
 
 title: ZebraClueTest
@@ -67,13 +69,21 @@ Phantom: What I'm saying is you've got this. Get back out there detective!
 
 title: Phantom
 ---
-sample text
+Phantom: You hear lot's of things when you're a ghost like me!
+Phantom: For one, I head that the monster who has a pet {$petThree} is directly to the right of the monster who east {$foodTwo}
+Phantom: Oh, and one other thing:
+Phantom: The monster who has a pet {$petThree} is two rooms to the right of the monster who likes {$hobbyTwo}.
 ===
 
 title: Mummy
 ---
+<<if $timesSpokenTwo == 0>>
 Mummy: Great. The party of the century has been ruined.
 Mummy: Find who did this, and there will be untold riches your way Mr. Blob.
+<<else>>
+Mummy: I have to keep reminding people about the no pets in the dining room policy. 
+Mummy: SOMEONE keeps sharing {$foodThree} with their {$petThree}
+<<endif>>
 ===
 
 title: Vampire
@@ -82,26 +92,31 @@ title: Vampire
 Vampire: It's a shame what happened to our Zombie friend. 
 Vampire: It was always nice to share a meal with him.
 <<else>>
-Vampire: I love the {$foodThree}, it's my favorite! 
-Vampire: It pairs so nicely with the {$drinkThree}. Yum!
+Vampire: Not sure if this helps with the case Mr. Blob, but I heard a rumor...
+Vampire: That the monsters who eats {$foodOne} is somewhere to the right of the monster who has a pet {$petThree}.
 <<endif>>
 <<set $timesSpokenThree = $timesSpokenThree + 1>>
 ===
 
 title: Centaur
 ---
-sample text
+Centaur: I'm not one for gossip, but if it helps the case:
+Centaur: I heard that the monster who drinks {$drinkFour} is to the left of the monster who eats {$foodTwo}
 ===
 
 title: Werewolf
 ---
-Werewolf: The {$speciesFour} loves to drink the {$drinkFour}.
+Werewolf: The {$speciesThree} loves to drink the {$drinkThree}.
 Werewolf: He's built up quite a tab too! Har har har!
 -> Would you say that bar tending gives you strong arms? <<once>>
-    Hm? Well I suppose so. It is a lot of shaking.
--> Do you smoke Mr? <<once>>
-    Oh, used to, but not anymore.
+    Werewolf: Hm? Well I suppose so. It is a lot of shaking.
+-> What do you do for fun Mr. Wolf?
+    Werewolf: I love {$hobbyFour}!
+-> Did you kill that guy? <<once>>
+    Werewolf: Goodness no!
 -> I'll be on my way.
+    Werewolf: Take care out there.
+
 ===
 
 title: Alien
@@ -116,7 +131,13 @@ title: Alien
 title: Body
 ---
 A poor zombie who will never eat brains again.
-He was hit pretty hard. Whoever did this had a strong arm.
-There's also a pile of ash next to the body. 
-Was the zombie a smoker? Or was our killer...
+<<if $killerClue == "wwPet">>
+There's fur near the body... The killer must have a pet {$petFour}!
+<<elseif $killerClue == "vpDrink">>
+theres a spill on the floor. The killer was drinking {$drinkTwo}! 
+<<elseif $killerClue == "ctPet">>
+There's fur near the body... The killer must have a pet {$petThree}!
+<<elseif $killerClue == "ptHobby">>
+tickets to a {$hobbyOne} convention. These must have fallen out of the killer's pocket!
+<<endif>>
 ===

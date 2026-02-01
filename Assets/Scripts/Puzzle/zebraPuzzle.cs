@@ -6,6 +6,8 @@ public class ZebraPuzzle : MonoBehaviour
 {
     private AssignTraits asT;
 
+    public string killerClue = "";
+
     public class Suspect
     {
         public string species;
@@ -18,6 +20,34 @@ public class ZebraPuzzle : MonoBehaviour
         public int Room;
         public bool isKiller;
     }
+
+    [Header("Spawn Positions")]
+        public Vector3 ctFoodPos;
+        public Vector3 ctDrinkPos;
+        public Vector3 ptDrinkPos;
+
+        [Header("Drink Prefabs")]
+        public GameObject Water;
+        public GameObject Wine;
+        public GameObject Cocktail;
+        public GameObject Beer;
+        public GameObject Margarita;
+        public GameObject Vodka;
+
+        [Header("Food Prefabs")]
+        public GameObject Cucumber;
+        public GameObject Bread;
+        public GameObject Sausage;
+        public GameObject Cheese;
+        public GameObject Egg;
+        public GameObject Shrimp;
+
+        [Header("UI Prefabs")]
+        public GameObject CorrectPanel;
+        public GameObject WrongPanel;
+        public GameObject accuseButton;
+        public GameObject backButton;
+        public GameObject accuseText;
 
     public List<Suspect> suspects = new List<Suspect>();
     public List<string> clues = new List<string>();
@@ -46,6 +76,8 @@ public class ZebraPuzzle : MonoBehaviour
 
         GenerateRoomClues();
         PrintMysteryToConsole();
+
+        SpawnItemClues();
     }
 
 
@@ -59,6 +91,7 @@ public class ZebraPuzzle : MonoBehaviour
         suspects.Add(new Suspect { species = asT.speciesFour });
         suspects.Add(new Suspect { species = asT.speciesFive });
         suspects.Add(new Suspect { species = asT.speciesSix });
+
     }
 
     void AssignAttributesFromAssignTraits()
@@ -85,7 +118,7 @@ public class ZebraPuzzle : MonoBehaviour
 
     void ChooseKiller()
     {
-        int index = Random.Range(0, suspects.Count);
+        int index = Random.Range(0, 4);
         for (int i = 0; i < suspects.Count; i++)
             suspects[i].isKiller = (i == index);
     }
@@ -106,33 +139,46 @@ public class ZebraPuzzle : MonoBehaviour
 
     void GenerateRoomClues()
     {
-        Suspect s1 = suspects[4];
-        Suspect s2 = suspects[2];
-        Suspect s3 = suspects[3];
-        Suspect s4 = suspects[0];
+        Suspect ww = suspects[3];
+        Suspect vp = suspects[1];
+        Suspect ct = suspects[2];
+        Suspect pt = suspects[0];
 
 
 
-        clues.Add($"The {s3.species} eats {s3.food}.");
-        clues.Add($"The {s4.species} drinks {s4.drink}.");
-        clues.Add($"The {s3.species} drinks {s3.drink}.");
-        clues.Add($"The monster who has a {s2.Pet} also eats {s2.food}.");
-        clues.Add($"The monster who eats {s4.food} is somewhere to the right of the monster who has a {s3.Pet}.");
-        clues.Add($"The monster who drinks {s1.drink} is immediately to the left of the monster who eats {s2.food}.");
-        clues.Add($"The {s1.species} likes {s1.Hobby}.");
-        clues.Add($"The monster who has a {s3.Pet} is immediately to the right of the monster who {s2.Hobby}.");
-        clues.Add($"The monster who likes {s4.Hobby} also has a {s4.Pet}.");
+        clues.Add($"The {ct.species} eats {ct.food}."); //spawn food and drink on table in lounge
+        clues.Add($"The phantom drinks {pt.drink}."); //drink spawn in bedroom
+        clues.Add($"The centaur drinks {ct.drink}.");
+        clues.Add($"The monster who has a {vp.Pet} also eats {vp.food}."); ///I have to keep reminding people about the no pets in the dining room policy. SOMEONE keeps sharing {food} with their {pet}.
+        clues.Add($"The monster who eats {pt.food} is somewhere to the right of the monster who has a {ct.Pet}."); //  
+        clues.Add($"The monster who drinks {ww.drink} is immediately to the left of the monster who eats {vp.food}.");
+        clues.Add($"The {ww.species} likes {ww.Hobby}."); ///werewolf talks about hobby when asked 
+        clues.Add($"The monster who has a {ct.Pet} is two rooms to the right of the monster who {vp.Hobby}."); 
+        clues.Add($"The monster who likes {pt.Hobby} also has a {pt.Pet}."); //i heard a rumor that...
 
         
-        if (s1.isKiller)
-            clues.Add($"The killer has a {s1.Pet}.");
-
-        else if (s2.isKiller)
-            clues.Add($"The killer drinks {s2.drink}.");
-        else if (s3.isKiller)
-            clues.Add($"The killer has a {s3.Pet}.");
+        if (ww.isKiller)
+        {
+            clues.Add($"The killer has a {ww.Pet}."); //some fur on the body. The killer must have a pet {}!
+            killerClue = "wwPet";
+        }
+        else if (vp.isKiller)
+        {
+           clues.Add($"The killer drinks {vp.drink}."); //theres a spill on the floor. The killer was drinking {}! 
+           killerClue = "vpDrink";
+        }
+        else if (ct.isKiller)
+        {
+            clues.Add($"The killer has a {ct.Pet}."); //some fur on the body. The killer must have a pet {}!
+            killerClue = "ctPet";
+        }
         else
-            clues.Add($"The killer likes {s4.Hobby}.");
+        {
+            clues.Add($"The killer likes {pt.Hobby}."); //tickets to a {} convention. These must have fallen out of the killer's pocket!
+            killerClue = "ptHobby";
+        }
+
+        Debug.Log("Killer clue: " + killerClue + "!");
     }
 
     void PrintMysteryToConsole()
@@ -148,11 +194,6 @@ public class ZebraPuzzle : MonoBehaviour
         Debug.Log("KILLER (debug): " + suspects.Find(s => s.isKiller).species);
     }
 
-    public GameObject CorrectPanel;
-    public GameObject WrongPanel;
-    public GameObject accuseButton;
-    public GameObject backButton;
-    public GameObject accuseText;
     public void AccuseMummy()      
     {      
         accuseButton.SetActive(false);
@@ -172,7 +213,7 @@ public class ZebraPuzzle : MonoBehaviour
         accuseButton.SetActive(false);
         backButton.SetActive(false);
         accuseText.SetActive(false);
-        if (suspects[4].isKiller)  
+        if (suspects[3].isKiller)  
         {  
             CorrectPanel.SetActive(true);  
         }  
@@ -197,7 +238,7 @@ public class ZebraPuzzle : MonoBehaviour
         accuseButton.SetActive(false);
         backButton.SetActive(false);
         accuseText.SetActive(false);
-        if (suspects[2].isKiller)  
+        if (suspects[1].isKiller)  
         {  
             CorrectPanel.SetActive(true);  
         }  
@@ -209,12 +250,84 @@ public class ZebraPuzzle : MonoBehaviour
         accuseButton.SetActive(false);
         backButton.SetActive(false);
         accuseText.SetActive(false);
-        if (suspects[3].isKiller)  
+        if (suspects[2].isKiller)  
         {  
             
             CorrectPanel.SetActive(true);
         }  
         else
         WrongPanel.SetActive(true);
+    }
+
+    void SpawnItemClues()
+    {
+        Suspect ct = suspects[2];
+        Suspect pt = suspects[0];
+
+        switch (ct.food)
+        {
+            case "Cucumber":
+                Instantiate(Cucumber, ctFoodPos, Quaternion.identity);
+                break;
+            case "Bread":
+                Instantiate(Bread, ctFoodPos, Quaternion.identity);
+                break;
+            case "Sausage Roll":
+                Instantiate(Sausage, ctFoodPos, Quaternion.identity);
+                break;
+            case "Finger Cheese":
+                Instantiate(Cheese, ctFoodPos, Quaternion.identity);
+                break;
+            case "Egg Bites":
+                Instantiate(Egg, ctFoodPos, Quaternion.identity);
+                break;
+            case "Shrimp":
+                Instantiate(Shrimp, ctFoodPos, Quaternion.identity);
+                break;
+        }
+
+        switch (ct.drink)
+        {
+            case "Water":
+                Instantiate(Water, ctDrinkPos, Quaternion.identity);
+                break;
+            case "Wine":
+                Instantiate(Wine, ctDrinkPos, Quaternion.identity);
+                break;
+            case "Cocktail":
+                Instantiate(Cocktail, ctDrinkPos, Quaternion.identity);
+                break;
+            case "Beer":
+                Instantiate(Beer, ctDrinkPos, Quaternion.identity);
+                break;
+            case "Margarita":
+                Instantiate(Margarita, ctDrinkPos, Quaternion.identity);
+                break;
+            case "Vodka":
+                Instantiate(Vodka, ctDrinkPos, Quaternion.identity);
+                break;
+        }
+
+        switch (pt.drink)
+        {
+            case "Water":
+                Instantiate(Water, ptDrinkPos, Quaternion.identity);
+                break;
+            case "Wine":
+                Instantiate(Wine, ptDrinkPos, Quaternion.identity);
+                break;
+            case "Cocktail":
+                Instantiate(Cocktail, ptDrinkPos, Quaternion.identity);
+                break;
+            case "Beer":
+                Instantiate(Beer, ptDrinkPos, Quaternion.identity);
+                break;
+            case "Margarita":
+                Instantiate(Margarita, ptDrinkPos, Quaternion.identity);
+                break;
+            case "Vodka":
+                Instantiate(Vodka, ptDrinkPos, Quaternion.identity);
+                break;
+        }
     }
 }
