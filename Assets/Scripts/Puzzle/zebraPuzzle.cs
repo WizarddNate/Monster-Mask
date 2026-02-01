@@ -59,6 +59,7 @@ public class ZebraPuzzle : MonoBehaviour
         suspects.Add(new Suspect { species = asT.speciesFour });
         suspects.Add(new Suspect { species = asT.speciesFive });
         suspects.Add(new Suspect { species = asT.speciesSix });
+
     }
 
     void AssignAttributesFromAssignTraits()
@@ -85,7 +86,7 @@ public class ZebraPuzzle : MonoBehaviour
 
     void ChooseKiller()
     {
-        int index = Random.Range(0, suspects.Count);
+        int index = Random.Range(0, 4);
         for (int i = 0; i < suspects.Count; i++)
             suspects[i].isKiller = (i == index);
     }
@@ -106,33 +107,33 @@ public class ZebraPuzzle : MonoBehaviour
 
     void GenerateRoomClues()
     {
-        Suspect s1 = suspects[4];
-        Suspect s2 = suspects[2];
-        Suspect s3 = suspects[3];
-        Suspect s4 = suspects[0];
+        Suspect ww = suspects[3];
+        Suspect vp = suspects[2];
+        Suspect ct = suspects[1];
+        Suspect pt = suspects[0];
 
 
 
-        clues.Add($"The {s3.species} eats {s3.food}.");
-        clues.Add($"The {s4.species} drinks {s4.drink}.");
-        clues.Add($"The {s3.species} drinks {s3.drink}.");
-        clues.Add($"The monster who has a {s2.Pet} also eats {s2.food}.");
-        clues.Add($"The monster who eats {s4.food} is somewhere to the right of the monster who has a {s3.Pet}.");
-        clues.Add($"The monster who drinks {s1.drink} is immediately to the left of the monster who eats {s2.food}.");
-        clues.Add($"The {s1.species} likes {s1.Hobby}.");
-        clues.Add($"The monster who has a {s3.Pet} is immediately to the right of the monster who {s2.Hobby}.");
-        clues.Add($"The monster who likes {s4.Hobby} also has a {s4.Pet}.");
+        clues.Add($"The {ct.species} eats {ct.food}.");
+        clues.Add($"The phantom drinks {pt.drink}.");
+        clues.Add($"The centaur drinks {ct.drink}.");
+        clues.Add($"The monster who has a {vp.Pet} also eats {vp.food}.");
+        clues.Add($"The monster who eats {pt.food} is somewhere to the right of the monster who has a {ct.Pet}.");
+        clues.Add($"The monster who drinks {ww.drink} is immediately to the left of the monster who eats {vp.food}.");
+        clues.Add($"The {ww.species} likes {ww.Hobby}.");
+        clues.Add($"The monster who has a {ct.Pet} is immediately to the right of the monster who {vp.Hobby}.");
+        clues.Add($"The monster who likes {pt.Hobby} also has a {pt.Pet}.");
 
         
-        if (s1.isKiller)
-            clues.Add($"The killer has a {s1.Pet}.");
+        if (ww.isKiller)
+            clues.Add($"The killer has a {ww.Pet}.");
 
-        else if (s2.isKiller)
-            clues.Add($"The killer drinks {s2.drink}.");
-        else if (s3.isKiller)
-            clues.Add($"The killer has a {s3.Pet}.");
+        else if (vp.isKiller)
+            clues.Add($"The killer drinks {vp.drink}.");
+        else if (ct.isKiller)
+            clues.Add($"The killer has a {ct.Pet}.");
         else
-            clues.Add($"The killer likes {s4.Hobby}.");
+            clues.Add($"The killer likes {pt.Hobby}.");
     }
 
     void PrintMysteryToConsole()
