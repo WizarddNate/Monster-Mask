@@ -95,7 +95,7 @@ public class DialoguePopup : MonoBehaviour
             {
                 VampireTalking();
             }
-            else if (MonsterName == "ZebraClueTest")
+            else if (MonsterName == "Centaur")
             {
                 CentaurTalking();
             }

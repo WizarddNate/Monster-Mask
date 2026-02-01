@@ -42,7 +42,7 @@ public class SFXTalking : MonoBehaviour
             {
                 VampireTalking();
             }
-            else if (monster == "ZebraClueTest")
+            else if (monster == "Centaur")
             {
                 CentaurTalking();
             }
