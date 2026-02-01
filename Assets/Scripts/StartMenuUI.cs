@@ -12,7 +12,7 @@ public class StartMenuUI : MonoBehaviour
     public bool quittersTalk = false;
     public float quitTimer = 0f;
 
-    public CanvasGroup ggjLogo;
+    // public CanvasGroup ggjLogo;
     public float fadeOutTime = 10.0f;
 
     public float startTimer = 0f;
@@ -22,10 +22,10 @@ public class StartMenuUI : MonoBehaviour
     void Awake()
     {
         //ggjLogo = GetComponent<CanvasGroup>();
-        if(ggjLogo == null)
-        {
-            Debug.Log ("where is she?");
-        }
+        // if(ggjLogo == null)
+        // {
+        //     Debug.Log ("where is she?");
+        // }
     }
 
     public void FadeOut()
