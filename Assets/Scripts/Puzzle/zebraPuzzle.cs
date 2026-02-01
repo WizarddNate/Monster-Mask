@@ -21,6 +21,34 @@ public class ZebraPuzzle : MonoBehaviour
         public bool isKiller;
     }
 
+    [Header("Spawn Positions")]
+        public Vector3 ctFoodPos;
+        public Vector3 ctDrinkPos;
+        public Vector3 ptDrinkPos;
+
+        [Header("Drink Prefabs")]
+        public GameObject Water;
+        public GameObject Wine;
+        public GameObject Cocktail;
+        public GameObject Beer;
+        public GameObject Margarita;
+        public GameObject Vodka;
+
+        [Header("Food Prefabs")]
+        public GameObject Cucumber;
+        public GameObject Bread;
+        public GameObject Sausage;
+        public GameObject Cheese;
+        public GameObject Egg;
+        public GameObject Shrimp;
+
+        [Header("UI Prefabs")]
+        public GameObject CorrectPanel;
+        public GameObject WrongPanel;
+        public GameObject accuseButton;
+        public GameObject backButton;
+        public GameObject accuseText;
+
     public List<Suspect> suspects = new List<Suspect>();
     public List<string> clues = new List<string>();
 
@@ -48,6 +76,8 @@ public class ZebraPuzzle : MonoBehaviour
 
         GenerateRoomClues();
         PrintMysteryToConsole();
+
+        SpawnItemClues();
     }
 
 
@@ -164,11 +194,6 @@ public class ZebraPuzzle : MonoBehaviour
         Debug.Log("KILLER (debug): " + suspects.Find(s => s.isKiller).species);
     }
 
-    public GameObject CorrectPanel;
-    public GameObject WrongPanel;
-    public GameObject accuseButton;
-    public GameObject backButton;
-    public GameObject accuseText;
     public void AccuseMummy()      
     {      
         accuseButton.SetActive(false);
@@ -232,5 +257,77 @@ public class ZebraPuzzle : MonoBehaviour
         }  
         else
         WrongPanel.SetActive(true);
+    }
+
+    void SpawnItemClues()
+    {
+        Suspect ct = suspects[2];
+        Suspect pt = suspects[0];
+
+        switch (ct.food)
+        {
+            case "Cucumber":
+                Instantiate(Cucumber, ctFoodPos, Quaternion.identity);
+                break;
+            case "Bread":
+                Instantiate(Bread, ctFoodPos, Quaternion.identity);
+                break;
+            case "Sausage Roll":
+                Instantiate(Sausage, ctFoodPos, Quaternion.identity);
+                break;
+            case "Finger Cheese":
+                Instantiate(Cheese, ctFoodPos, Quaternion.identity);
+                break;
+            case "Egg Bites":
+                Instantiate(Egg, ctFoodPos, Quaternion.identity);
+                break;
+            case "Shrimp":
+                Instantiate(Shrimp, ctFoodPos, Quaternion.identity);
+                break;
+        }
+
+        switch (ct.drink)
+        {
+            case "Water":
+                Instantiate(Water, ctDrinkPos, Quaternion.identity);
+                break;
+            case "Wine":
+                Instantiate(Wine, ctDrinkPos, Quaternion.identity);
+                break;
+            case "Cocktail":
+                Instantiate(Cocktail, ctDrinkPos, Quaternion.identity);
+                break;
+            case "Beer":
+                Instantiate(Beer, ctDrinkPos, Quaternion.identity);
+                break;
+            case "Margarita":
+                Instantiate(Margarita, ctDrinkPos, Quaternion.identity);
+                break;
+            case "Vodka":
+                Instantiate(Vodka, ctDrinkPos, Quaternion.identity);
+                break;
+        }
+
+        switch (pt.drink)
+        {
+            case "Water":
+                Instantiate(Water, ptDrinkPos, Quaternion.identity);
+                break;
+            case "Wine":
+                Instantiate(Wine, ptDrinkPos, Quaternion.identity);
+                break;
+            case "Cocktail":
+                Instantiate(Cocktail, ptDrinkPos, Quaternion.identity);
+                break;
+            case "Beer":
+                Instantiate(Beer, ptDrinkPos, Quaternion.identity);
+                break;
+            case "Margarita":
+                Instantiate(Margarita, ptDrinkPos, Quaternion.identity);
+                break;
+            case "Vodka":
+                Instantiate(Vodka, ptDrinkPos, Quaternion.identity);
+                break;
+        }
     }
 }
