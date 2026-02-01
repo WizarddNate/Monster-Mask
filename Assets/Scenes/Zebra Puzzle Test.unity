@@ -241,10 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f0d095f03ccf27429dc45e2bae9c5f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::zebraPuzzle
-  clues:
-  - 
-  - 
-  - 
+  clues: []
 --- !u!4 &446628093
 Transform:
   m_ObjectHideFlags: 0
