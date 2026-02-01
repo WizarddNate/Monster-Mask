@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// Fully solvable Zebra Puzzle with Rooms
-public class ZebraPuzzleRooms : MonoBehaviour
+public class ZebraPuzzle : MonoBehaviour
 {
-    [System.Serializable]
+    private AssignTraits asT;
+
     public class Suspect
     {
         public string species;
@@ -21,31 +21,17 @@ public class ZebraPuzzleRooms : MonoBehaviour
     public List<Suspect> suspects = new List<Suspect>();
     public List<string> clues = new List<string>();
 
-    private List<string> suspectspecies = new List<string>
-        { "Phantom","Vampire","Werewolf","Alien","Mummy","Centaur" };
-
-    private List<string> drinks = new List<string>
-        { "water","wine","beer","cocktail","margarita","vodka" };
-
-    private List<string> foods = new List<string>
-        { "cucumber","bread","sausage roll","finger cheese","egg bites","shrimp" };
-
-    private List<string> smokes = new List<string>
-        { "yes","no","often","rarely","at partys","not recently" };
-
-    private List<string> Hobby = new List<string>
-        { "philanthropy","painting","writing","equestrianism","croquet","gambling" };
-
-    private List<string> Pets = new List<string>
-        { "cat","dog","fish", "horse","bird","lizard" };
-
-    private List<string> MaritalStatus = new List<string>
-        { "Single","Married","Divorced","non-married partners","It's complicated","Cheating" };
+    void Awake()
+    {
+        asT = GetComponent<AssignTraits>();
+        if (asT == null)
+            Debug.LogError("AssignTraits component not found!");
+    }
 
     void Start()
     {
         CreateSuspects();
-        AssignAttributes();
+        AssignAttributesFromAssignTraits();
         ChooseKiller();
 
         suspects.Sort((a, b) => a.Room.CompareTo(b.Room));
@@ -57,57 +43,35 @@ public class ZebraPuzzleRooms : MonoBehaviour
     void CreateSuspects()
     {
         suspects.Clear();
-        foreach (string s in suspectspecies)
-            suspects.Add(new Suspect { species = s });
+
+        suspects.Add(new Suspect { species = asT.speciesOne });
+        suspects.Add(new Suspect { species = asT.speciesTwo });
+        suspects.Add(new Suspect { species = asT.speciesThree });
+        suspects.Add(new Suspect { species = asT.speciesFour });
+        suspects.Add(new Suspect { species = asT.speciesFive });
+        suspects.Add(new Suspect { species = asT.speciesSix });
     }
 
-    void AssignAttributes()
+    void AssignAttributesFromAssignTraits()
     {
-        List<string> d = new List<string>(drinks);
-        List<string> f = new List<string>(foods);
-        List<string> s = new List<string>(smokes);
-        List<string> h = new List<string>(Hobby);
-        List<string> p = new List<string>(Pets);
-        List<string> m = new List<string>(MaritalStatus);
-        List<int> rooms = new List<int> { 1, 2, 3, 4, 5, 6 };
+        var traitsList = asT.GetAllChosenTraits();
 
-        foreach (Suspect suspect in suspects)
+        suspects.Clear();
+        for (int i = 0; i < traitsList.Count; i++)
         {
-            suspect.drink = PickAndRemoveString(d);
-            suspect.food = PickAndRemoveString(f);
-            suspect.smoke = PickAndRemoveString(s);
-            suspect.Hobby = PickAndRemoveString(h);
-            suspect.Pet = PickAndRemoveString(p);
-            suspect.MaritalStatus = PickAndRemoveString(m);
-            suspect.Room = PickAndRemoveInt(rooms);
+            var t = traitsList[i];
+            suspects.Add(new Suspect
+            {
+                species = t.species,
+                drink = t.drink,
+                food = t.food,
+                smoke = t.smoke,
+                Hobby = t.hobby,
+                Pet = t.pet,
+                MaritalStatus = t.relationship,
+                Room = i + 1
+            });
         }
-    }
-
-    string PickAndRemoveString(List<string> list)
-    {
-        if (list.Count == 0)
-        {
-            Debug.LogError("Attempted to pick from empty string list.");
-            return "";
-        }
-
-        int idx = Random.Range(0, list.Count);
-        string val = list[idx];
-        list.RemoveAt(idx);
-        return val;
-    }
-
-    int PickAndRemoveInt(List<int> list)
-    {
-        if (list.Count == 0)
-        {
-            Debug.LogError("Attempted to pick from empty int list.");
-            return -1;
-        }
-        int idx = Random.Range(0, list.Count);
-        int val = list[idx];
-        list.RemoveAt(idx);
-        return val;
     }
 
     void ChooseKiller()
@@ -131,10 +95,8 @@ public class ZebraPuzzleRooms : MonoBehaviour
         return val;
     }
 
-        void GenerateRoomClues()
+    void GenerateRoomClues()
     {
-        //clues.Clear();
-
         Suspect s1 = suspects[0];
         Suspect s2 = suspects[1];
         Suspect s3 = suspects[2];
@@ -146,7 +108,7 @@ public class ZebraPuzzleRooms : MonoBehaviour
             new AttributePick { getter = x => x.food, describe = v => $"eats {v}" },
             new AttributePick { getter = x => x.Pet, describe = v => $"has a {v}" },
             new AttributePick { getter = x => x.Hobby, describe = v => $"likes {v}" },
-            new AttributePick { getter = x => x.smoke, describe = v => $"has a smoking frequency of {v}" },
+            new AttributePick { getter = x => x.smoke, describe = v => $"smokes {v}" },
             new AttributePick { getter = x => x.MaritalStatus, describe = v => $"has a relationship status of {v}" }
         };
 
@@ -176,7 +138,6 @@ public class ZebraPuzzleRooms : MonoBehaviour
         else
             clues.Add($"The killer {clue4.describe(clue4.getter(s4))}.");
     }
-
 
     void PrintMysteryToConsole()
     {

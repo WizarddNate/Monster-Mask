@@ -5,13 +5,15 @@ public class VariableStorage : MonoBehaviour
 {
     private DialogueRunner runner;
 
-    private ZebraPuzzleRooms zPR;
+    private ZebraPuzzle zPR;
+    private AssignTraits asT;
 
     private static string playerName = "Cleven";
 
     void Start()
     {
-        zPR = GameObject.FindFirstObjectByType<ZebraPuzzleRooms>();
+        asT = GameObject.FindFirstObjectByType<AssignTraits>();
+        zPR = GameObject.FindFirstObjectByType<ZebraPuzzle>();
         
         /*
         if (zPR.clues == null)
@@ -24,12 +26,16 @@ public class VariableStorage : MonoBehaviour
             Debug.Log("CLUE 1: " + clue1);
         }
         */
-        
 
         runner = GameObject.FindFirstObjectByType<DialogueRunner>();
         runner.AddFunction<string>("get_player_name", GetPlayerName);
         runner.AddFunction<string>("get_clue_one", GetClueOne);
+
+        //runner.VariableStorage.SetValue("$player_coins", 10);
+        runner.VariableStorage.SetValue("$monster1", "Vampire"); //asT.speciesOne
+
     }
+
 
     private static string GetPlayerName()
     {

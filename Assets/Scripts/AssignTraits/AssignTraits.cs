@@ -10,7 +10,7 @@ public class AssignTraits : MonoBehaviour
     public List<string> partyMembers = new List<string>() { "Phantom", "Mummy", "Vampire", "Centaur", "Werewolf", "Alien" };
     public List<string> favDrink = new List<string>() { "Water", "Wine", "Cocktail", "Beer", "Margarita", "Vodka" };
     public List<string> favFood = new List<string>() { "Cucumber", "Bread", "Sausage Roll", "Finger Cheese", "Egg Bites", "Shrimp" };
-    public List<string> favSmoke = new List<string>() { "Yes", "No", "Often", "Rarely", "At Partys", "Not Recently" };
+    public List<string> favSmoke = new List<string>() { "Yes", "Never", "Often", "Rarely", "At Partys", "Not Recently" };
     public List<string> favHobby = new List<string>() { "Philanthropy", "Painting", "Writing", "Equestrianism", "Croquet", "Gambling" };
     public List<string> favRelationship = new List<string>() { "Single", "Married", "Dating", "Cheating", "Its Complicated", "Divorced" };
     public List<string> favPet = new List<string>() { "Cat", "Dog", "Fish", "Horse", "Bird", "Lizard" };
@@ -48,7 +48,7 @@ public class AssignTraits : MonoBehaviour
     public void Assign()
     {
         charaSize = partyMembers.Count;
-        int charaNumIndex = Random.Range(0, charaSize);
+        int charaNumIndex = 0; // Random.Range(0, charaSize);
         chosenChara = partyMembers[charaNumIndex];
         partyMembers.RemoveAt(charaNumIndex);
 
@@ -147,7 +147,7 @@ public class AssignTraits : MonoBehaviour
 
         if (iterator == 1)
         {
-            nameOne =  charaName;
+            nameOne = charaName;
             speciesOne = chosenChara;
             drinkOne = chosenDrink;
             foodOne = chosenFood;
@@ -294,6 +294,33 @@ public class AssignTraits : MonoBehaviour
     public string petSix;
 
 
+public List<SuspectTraits> GetAllChosenTraits()
+{
+    return new List<SuspectTraits>
+    {
+        new SuspectTraits(speciesOne, drinkOne, foodOne, smokerOne, hobbyOne, petOne, relationshipOne),
+        new SuspectTraits(speciesTwo, drinkTwo, foodTwo, smokerTwo, hobbyTwo, petTwo, relationshipTwo),
+        new SuspectTraits(speciesThree, drinkThree, foodThree, smokerThree, hobbyThree, petThree, relationshipThree),
+        new SuspectTraits(speciesFour, drinkFour, foodFour, smokerFour, hobbyFour, petFour, relationshipFour),
+        new SuspectTraits(speciesFive, drinkFive, foodFive, smokerFive, hobbyFive, petFive, relationshipFive),
+        new SuspectTraits(speciesSix, drinkSix, foodSix, smokerSix, hobbySix, petSix, relationshipSix)
+    };
+}
+
+public struct SuspectTraits
+{
+    public string species, drink, food, smoke, hobby, pet, relationship;
+    public SuspectTraits(string species, string drink, string food, string smoke, string hobby, string pet, string relationship)
+    {
+        this.species = species;
+        this.drink = drink;
+        this.food = food;
+        this.smoke = smoke;
+        this.hobby = hobby;
+        this.pet = pet;
+        this.relationship = relationship;
+    }
+}
 
 
 }
