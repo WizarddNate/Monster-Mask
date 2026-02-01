@@ -567,11 +567,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2266315735388976830, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: m_Name
-      value: Monster (5)
+      value: Alien
       objectReference: {fileID: 0}
     - target: {fileID: 5793877517101713290, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: MonsterName
-      value: ZebraClueTest
+      value: Alien
       objectReference: {fileID: 0}
     - target: {fileID: 6317273853008166744, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1605,7 +1605,7 @@ Transform:
   m_GameObject: {fileID: 689017226}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13052616, y: -0.0000022730576, z: 0.000017265591, w: 0.9914449}
-  m_LocalPosition: {x: 1.7399998, y: 3.6590111, z: -7.0416536}
+  m_LocalPosition: {x: 1.7400005, y: 3.315806, z: -7.1336155}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2850,6 +2850,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602998648}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1692095618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1692095619}
+  m_Layer: 0
+  m_Name: SpawnObj
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1692095619
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692095618}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 32.2863, y: 0, z: 19.47136}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1742050507
 GameObject:
   m_ObjectHideFlags: 0
@@ -3490,19 +3521,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5080173820665965665, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5080173820665965665, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5080173820665965665, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 20
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080173820665965665, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.52
       objectReference: {fileID: 0}
     - target: {fileID: 5080173820665965665, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.3
+      value: 11.24
       objectReference: {fileID: 0}
     - target: {fileID: 5080173820665965665, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -3538,7 +3573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6317273853008166744, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.89
+      value: -0.38
       objectReference: {fileID: 0}
     - target: {fileID: 6317273853008166744, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3603,19 +3638,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5080173820665965665, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5080173820665965665, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5080173820665965665, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 20
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080173820665965665, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.96
       objectReference: {fileID: 0}
     - target: {fileID: 5080173820665965665, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.23
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 5080173820665965665, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -3768,7 +3807,7 @@ Transform:
   m_GameObject: {fileID: 2082379186}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 1.7399998, y: 3.6590111, z: -7.0416536}
+  m_LocalPosition: {x: 1.7400005, y: 3.315806, z: -7.1336155}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3789,16 +3828,16 @@ MonoBehaviour:
   CameraDistance: 7.23
   DeadZoneDepth: 2
   Composition:
-    ScreenPosition: {x: 0, y: 0.00000010430813}
+    ScreenPosition: {x: 0, y: 0.00000015646219}
     DeadZone:
       Enabled: 1
-      Size: {x: 0.3, y: 0.30854693}
+      Size: {x: 0.3, y: 0.07675178}
     HardLimits:
       Enabled: 0
-      Size: {x: 0.8, y: 0.8}
+      Size: {x: 0.8, y: 0.8699138}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
-  TargetOffset: {x: 0, y: 0.78, z: 0}
+  TargetOffset: {x: 0, y: 0.38, z: 0.12}
   Damping: {x: 1, y: 1, z: 1}
   Lookahead:
     Enabled: 0
@@ -4057,10 +4096,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster
       objectReference: {fileID: 0}
-    - target: {fileID: 5793877517101713290, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
-      propertyPath: MonsterName
-      value: ZebraClueTest
-      objectReference: {fileID: 0}
     - target: {fileID: 6317273853008166744, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.96
@@ -4118,6 +4153,7 @@ SceneRoots:
   - {fileID: 1742050509}
   - {fileID: 1200722712}
   - {fileID: 161387164}
+  - {fileID: 1692095619}
   - {fileID: 1774042918}
   - {fileID: 1798559885}
   - {fileID: 175901065}
