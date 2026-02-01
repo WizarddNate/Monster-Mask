@@ -69,7 +69,8 @@ Mummy: Find who did this, and there will be untold riches your way Mr. Blob.
 title: Vampire
 ---
 <<if $timesSpokenThree == 0>>
-Vampire: It's a shame what happened to our Zombie friend. It was always nice to share a meal with him.
+Vampire: It's a shame what happened to our Zombie friend. 
+Vampire: It was always nice to share a meal with him.
 <<else>>
 Vampire: I love the {$foodThree}, it's my favorite! 
 Vampire: It pairs so nicely with the {$drinkThree}. Yum!
