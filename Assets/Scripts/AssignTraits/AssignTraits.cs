@@ -48,7 +48,7 @@ public class AssignTraits : MonoBehaviour
     public void Assign()
     {
         charaSize = partyMembers.Count;
-        int charaNumIndex = Random.Range(0, charaSize);
+        int charaNumIndex = 0; // Random.Range(0, charaSize);
         chosenChara = partyMembers[charaNumIndex];
         partyMembers.RemoveAt(charaNumIndex);
 

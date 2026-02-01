@@ -13,7 +13,7 @@ public class VariableStorage : MonoBehaviour
     {
         zPR = GameObject.FindFirstObjectByType<ZebraPuzzle>();
         
-        
+        /*
         if (zPR.clues == null)
         {
             Debug.Log("Clues list null");
