@@ -6,6 +6,8 @@ public class ZebraPuzzle : MonoBehaviour
 {
     private AssignTraits asT;
 
+    public string killerClue = "";
+
     public class Suspect
     {
         public string species;
@@ -108,32 +110,45 @@ public class ZebraPuzzle : MonoBehaviour
     void GenerateRoomClues()
     {
         Suspect ww = suspects[3];
-        Suspect vp = suspects[2];
-        Suspect ct = suspects[1];
+        Suspect vp = suspects[1];
+        Suspect ct = suspects[2];
         Suspect pt = suspects[0];
 
 
 
-        clues.Add($"The {ct.species} eats {ct.food}.");
-        clues.Add($"The phantom drinks {pt.drink}.");
+        clues.Add($"The {ct.species} eats {ct.food}."); //spawn food and drink on table in lounge
+        clues.Add($"The phantom drinks {pt.drink}."); //drink spawn in bedroom
         clues.Add($"The centaur drinks {ct.drink}.");
-        clues.Add($"The monster who has a {vp.Pet} also eats {vp.food}.");
-        clues.Add($"The monster who eats {pt.food} is somewhere to the right of the monster who has a {ct.Pet}.");
+        clues.Add($"The monster who has a {vp.Pet} also eats {vp.food}."); ///I have to keep reminding people about the no pets in the dining room policy. SOMEONE keeps sharing {food} with their {pet}.
+        clues.Add($"The monster who eats {pt.food} is somewhere to the right of the monster who has a {ct.Pet}."); //  
         clues.Add($"The monster who drinks {ww.drink} is immediately to the left of the monster who eats {vp.food}.");
-        clues.Add($"The {ww.species} likes {ww.Hobby}.");
-        clues.Add($"The monster who has a {ct.Pet} is immediately to the right of the monster who {vp.Hobby}.");
-        clues.Add($"The monster who likes {pt.Hobby} also has a {pt.Pet}.");
+        clues.Add($"The {ww.species} likes {ww.Hobby}."); ///werewolf talks about hobby when asked 
+        clues.Add($"The monster who has a {ct.Pet} is two rooms to the right of the monster who {vp.Hobby}."); 
+        clues.Add($"The monster who likes {pt.Hobby} also has a {pt.Pet}."); //i heard a rumor that...
 
         
         if (ww.isKiller)
-            clues.Add($"The killer has a {ww.Pet}.");
-
+        {
+            clues.Add($"The killer has a {ww.Pet}."); //some fur on the body. The killer must have a pet {}!
+            killerClue = "wwPet";
+        }
         else if (vp.isKiller)
-            clues.Add($"The killer drinks {vp.drink}.");
+        {
+           clues.Add($"The killer drinks {vp.drink}."); //theres a spill on the floor. The killer was drinking {}! 
+           killerClue = "vpDrink";
+        }
         else if (ct.isKiller)
-            clues.Add($"The killer has a {ct.Pet}.");
+        {
+            clues.Add($"The killer has a {ct.Pet}."); //some fur on the body. The killer must have a pet {}!
+            killerClue = "ctPet";
+        }
         else
-            clues.Add($"The killer likes {pt.Hobby}.");
+        {
+            clues.Add($"The killer likes {pt.Hobby}."); //tickets to a {} convention. These must have fallen out of the killer's pocket!
+            killerClue = "ptHobby";
+        }
+
+        Debug.Log("Killer clue: " + killerClue + "!");
     }
 
     void PrintMysteryToConsole()
@@ -173,7 +188,7 @@ public class ZebraPuzzle : MonoBehaviour
         accuseButton.SetActive(false);
         backButton.SetActive(false);
         accuseText.SetActive(false);
-        if (suspects[4].isKiller)  
+        if (suspects[3].isKiller)  
         {  
             CorrectPanel.SetActive(true);  
         }  
@@ -198,7 +213,7 @@ public class ZebraPuzzle : MonoBehaviour
         accuseButton.SetActive(false);
         backButton.SetActive(false);
         accuseText.SetActive(false);
-        if (suspects[2].isKiller)  
+        if (suspects[1].isKiller)  
         {  
             CorrectPanel.SetActive(true);  
         }  
@@ -210,7 +225,7 @@ public class ZebraPuzzle : MonoBehaviour
         accuseButton.SetActive(false);
         backButton.SetActive(false);
         accuseText.SetActive(false);
-        if (suspects[3].isKiller)  
+        if (suspects[2].isKiller)  
         {  
             
             CorrectPanel.SetActive(true);
