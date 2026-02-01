@@ -8,12 +8,16 @@
 <<declare $hobbyOne = "">>
 <<declare $petOne = "">>
 
+<<declare $timesSpokenOne = 0>>
+
 <<declare $speciesTwo = "Mummy">>
 <<declare $nameTwo = "">>
 <<declare $foodTwo = "">>
 <<declare $drinkTwo = "">>
 <<declare $hobbyTwo = "">>
 <<declare $petTwo = "">>
+
+<<declare $timesSpokenTwo = 0>>
 
 <<declare $speciesThree = "Vampire">>
 <<declare $nameThree = "">>
@@ -31,6 +35,8 @@
 <<declare $hobbyFour = "">>
 <<declare $petFour = "">>
 
+<<declare $timesSpokenFour = 0>>
+
 <<declare $speciesFive = "Werewolf">>
 <<declare $nameFive = "">>
 <<declare $foodFive = "">>
@@ -38,12 +44,16 @@
 <<declare $hobbyFive = "">>
 <<declare $petFive = "">>
 
+<<declare $timesSpokenFive = 0>>
+
 <<declare $speciesSix = "Alien">>
 <<declare $nameSix = "">>
 <<declare $foodSix = "">>
 <<declare $drinkSix = "">>
 <<declare $hobbySix = "">>
 <<declare $petSix = "">>
+
+<<declare $timesSpokenSix = 0>>
 ===
 
 title: ZebraClueTest
@@ -85,8 +95,13 @@ sample text
 
 title: Werewolf
 ---
-Werewolf: The {$speciesFour} loves to drink {$drinkFour}.
+Werewolf: The {$speciesFour} loves to drink the {$drinkFour}.
 Werewolf: He's built up quite a tab too! Har har har!
+-> Would you say that bar tending gives you strong arms? <<once>>
+    Hm? Well I suppose so. It is a lot of shaking.
+-> Do you smoke Mr? <<once>>
+    Oh, used to, but not anymore.
+-> I'll be on my way.
 ===
 
 title: Alien
@@ -95,4 +110,13 @@ title: Alien
 => Alien: GARLORP.
 => Alien: OURBLE. 
 => Alien: :D
+=> Alien: BEEBLA.
+===
+
+title: Body
+---
+A poor zombie who will never eat brains again.
+He was hit pretty hard. Whoever did this had a strong arm.
+There's also a pile of ash next to the body. 
+Was the zombie a smoker? Or was our killer...
 ===
