@@ -64,6 +64,5 @@ public class AccuseAppears : MonoBehaviour
         AccusePanel.SetActive(true);
         investigation.mute = !investigation.mute;
         accuse.mute = !accuse.mute;
-
     }
 }
