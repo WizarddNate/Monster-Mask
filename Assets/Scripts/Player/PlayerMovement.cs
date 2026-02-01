@@ -3,7 +3,15 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
+    public Animator anim;
     public float speed;
+
+
+    void Start()
+    {
+        anim = GetComponentInChildren<Animator>();
+        anim.SetBool("iswalking", false);
+    }
 
     void Update()
     {
@@ -17,6 +25,11 @@ public class PlayerMovement : MonoBehaviour
         {
             //Debug.Log("Received movement input: " + direction);
             controller.Move(direction * speed * Time.deltaTime);
+            anim.SetBool("iswalking", true);
+        }
+        else
+        {
+            anim.SetBool("iswalking", false);
         }
     }
 }
