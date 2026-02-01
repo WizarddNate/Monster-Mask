@@ -1,11 +1,13 @@
 ﻿title: Setup
 ---
-<<declare $player_coins = 0>>
+<<declare $monster1 = "">>
 ===
 
 title: ZebraClueTest
 ---
-Vampire: Hey there detective, staying sharp?
+{$monster1}: Hey there detective, staying sharp?
+It's me, Mr. {$monster1}!
+{$monster1}: Between you and me... Im pretty nervous about this.
 
-Vampire: Just between you and me... I heard a rumor that {get_player_name()} only has {$player_coins} coins to his name.
+//Vampire: Just between you and me... I heard a rumor that {get_player_name()} only has {$player_coins} coins to his name.
 ===

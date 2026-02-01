@@ -124,6 +124,177 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8104988498923750282, guid: 6235a81dc036eab47b74d2880eb90045, type: 3}
   m_PrefabInstance: {fileID: 7511515517298467655}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &161387162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 161387164}
+  - component: {fileID: 161387163}
+  - component: {fileID: 161387165}
+  m_Layer: 0
+  m_Name: Zebra Puzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &161387163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161387162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f0d095f03ccf27429dc45e2bae9c5f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZebraPuzzleRooms
+  clues: []
+--- !u!4 &161387164
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161387162}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 32.2863, y: 0, z: 19.47136}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &161387165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161387162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e83b2cb6cad426c992c31e50dd7b54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AssignTraits
+  charaName: 
+  partyMembers:
+  - Phantom
+  - Mummy
+  - Vampire
+  - Centaur
+  - Werewolf
+  - Alien
+  favDrink:
+  - Water
+  - Wine
+  - Cocktail
+  - Beer
+  - Margarita
+  - Vodka
+  favFood:
+  - Cucumber
+  - Bread
+  - Sausage Roll
+  - Finger Cheese
+  - Egg Bites
+  - Shrimp
+  favSmoke:
+  - Yes
+  - Never
+  - Often
+  - Rarely
+  - At Partys
+  - Not Recently
+  favHobby:
+  - Philanthropy
+  - Painting
+  - Writing
+  - Equestrianism
+  - Croquet
+  - Gambling
+  favRelationship:
+  - Single
+  - Married
+  - Dating
+  - Cheating
+  - Its Complicated
+  - Divorced
+  favPet:
+  - Cat
+  - Dog
+  - Fish
+  - Horse
+  - Bird
+  - Lizard
+  chosenChara: 
+  chosenDrink: 
+  chosenFood: 
+  chosenSmoke: 
+  chosenHobby: 
+  chosenRelationship: 
+  chosenPet: 
+  charaSize: 0
+  drinkSize: 0
+  foodSize: 0
+  smokeSize: 0
+  hobbySize: 0
+  relationshipSize: 0
+  petSize: 0
+  iterator: 1
+  nameOne: 
+  speciesOne: 
+  drinkOne: 
+  foodOne: 
+  smokerOne: 
+  relationshipOne: 
+  hobbyOne: 
+  petOne: 
+  nameTwo: 
+  speciesTwo: 
+  drinkTwo: 
+  foodTwo: 
+  smokerTwo: 
+  relationshipTwo: 
+  hobbyTwo: 
+  petTwo: 
+  nameThree: 
+  speciesThree: 
+  drinkThree: 
+  foodThree: 
+  smokerThree: 
+  relationshipThree: 
+  hobbyThree: 
+  petThree: 
+  nameFour: 
+  speciesFour: 
+  drinkFour: 
+  foodFour: 
+  smokerFour: 
+  relationshipFour: 
+  hobbyFour: 
+  petFour: 
+  nameFive: 
+  speciesFive: 
+  drinkFive: 
+  foodFive: 
+  smokerFive: 
+  relationshipFive: 
+  hobbyFive: 
+  petFive: 
+  nameSix: 
+  speciesSix: 
+  drinkSix: 
+  foodSix: 
+  smokerSix: 
+  relationshipSix: 
+  hobbySix: 
+  petSix: 
 --- !u!1 &206424622
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,7 +791,7 @@ Transform:
   m_GameObject: {fileID: 689017226}
   serializedVersion: 2
   m_LocalRotation: {x: 0.11825442, y: 0.0049670152, z: -0.0005725253, w: 0.99297076}
-  m_LocalPosition: {x: -0.7972879, y: 3.4085205, z: -9.972835}
+  m_LocalPosition: {x: 1.6427121, y: 3.4085205, z: -9.972835}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -770,6 +941,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1200722711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1200722712}
+  m_Layer: 0
+  m_Name: ---- Puzzle Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1200722712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200722711}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 32.2863, y: 0, z: 19.47136}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1238345143 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9078442560890639579, guid: 52571f68872914e24837210513edea1d, type: 3}
@@ -929,7 +1131,7 @@ GameObject:
   - component: {fileID: 1372982420}
   - component: {fileID: 1372982419}
   m_Layer: 0
-  m_Name: Character (1)
+  m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1003,7 +1205,7 @@ Transform:
   m_GameObject: {fileID: 1372982418}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.43, y: 0.87, z: 5.46}
+  m_LocalPosition: {x: 7.92, y: 0.87, z: 5.46}
   m_LocalScale: {x: 19.34, y: 12.12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1035,6 +1237,50 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.3586, y: -0, z: 0.36372}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1742050507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1742050509}
+  - component: {fileID: 1742050508}
+  m_Layer: 0
+  m_Name: Variable Storage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1742050508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742050507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df96c2c9307b880439248818fe8b46d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VariableStorage
+--- !u!4 &1742050509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742050507}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.35404, y: 4.43824, z: -3.56942}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1397,7 +1643,7 @@ Transform:
   m_GameObject: {fileID: 2082379186}
   serializedVersion: 2
   m_LocalRotation: {x: 0.11825442, y: 0.0049670152, z: -0.0005725253, w: 0.99297076}
-  m_LocalPosition: {x: -0.7972879, y: 3.4085205, z: -9.972835}
+  m_LocalPosition: {x: 1.6427121, y: 3.4085205, z: -9.972835}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1464,7 +1710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8104988498923750282, guid: 6235a81dc036eab47b74d2880eb90045, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.7
+      value: 1.74
       objectReference: {fileID: 0}
     - target: {fileID: 8104988498923750282, guid: 6235a81dc036eab47b74d2880eb90045, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1525,7 +1771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5793877517101713290, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: MonsterName
-      value: Intro
+      value: ZebraClueTest
       objectReference: {fileID: 0}
     - target: {fileID: 6317273853008166744, guid: f3b4a87e97127ce49b6cf07e5c34a85f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1581,6 +1827,9 @@ SceneRoots:
   - {fileID: 222724354}
   - {fileID: 206424623}
   - {fileID: 231116607}
+  - {fileID: 1742050509}
+  - {fileID: 1200722712}
+  - {fileID: 161387164}
   - {fileID: 1774042918}
   - {fileID: 1974564627}
   - {fileID: 1894417202}
