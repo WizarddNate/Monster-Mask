@@ -75,15 +75,23 @@ public class StartMenuUI : MonoBehaviour
     public void OnStartButton()
     {
         SoundFXManager.instance.PlayRandomSoundFXClip(startGameClips, transform, 1f);
-        letsGo = true;
-        startTimer = 0;
+        if (letsGo == false)
+        {
+            startTimer = 0;
+            letsGo = true;
+        }
+
+
     }
 
     public void OnQuitButton()
     {
         SoundFXManager.instance.PlaySoundFXClip(thunder_quit, transform, 1f);
-        quittersTalk = true;
-        quitTimer = 0;
+        if (quittersTalk == false)
+        {
+            quittersTalk = true;
+            quitTimer = 0;
+        }
     }
 
     void Update()
