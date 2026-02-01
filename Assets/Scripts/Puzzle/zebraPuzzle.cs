@@ -150,16 +150,28 @@ public class ZebraPuzzle : MonoBehaviour
 
     public GameObject CorrectPanel;
     public GameObject WrongPanel;
+    public GameObject accuseButton;
+    public GameObject backButton;
+    public GameObject accuseText;
     public void AccuseMummy()      
     {      
+        accuseButton.SetActive(false);
+        backButton.SetActive(false);
+        accuseText.SetActive(false);
         WrongPanel.SetActive(true);
     }
     public void AccuseAlien()      
     {      
+        accuseButton.SetActive(false);
+        backButton.SetActive(false);
+        accuseText.SetActive(false);
         WrongPanel.SetActive(true);
     }
     public void AccuseWerewolf()      
     {      
+        accuseButton.SetActive(false);
+        backButton.SetActive(false);
+        accuseText.SetActive(false);
         if (suspects[4].isKiller)  
         {  
             CorrectPanel.SetActive(true);  
@@ -170,6 +182,9 @@ public class ZebraPuzzle : MonoBehaviour
     
         public void AccusePhantom()      
     {      
+        accuseButton.SetActive(false);
+        backButton.SetActive(false);
+        accuseText.SetActive(false);
         if (suspects[0].isKiller)  
         {  
             CorrectPanel.SetActive(true);  
@@ -179,6 +194,9 @@ public class ZebraPuzzle : MonoBehaviour
     }
     public void AccuseVampire()      
     {      
+        accuseButton.SetActive(false);
+        backButton.SetActive(false);
+        accuseText.SetActive(false);
         if (suspects[2].isKiller)  
         {  
             CorrectPanel.SetActive(true);  
@@ -188,12 +206,15 @@ public class ZebraPuzzle : MonoBehaviour
     }
     public void AccuseCentaur()      
     {      
+        accuseButton.SetActive(false);
+        backButton.SetActive(false);
+        accuseText.SetActive(false);
         if (suspects[3].isKiller)  
         {  
-            CorrectPanel.SetActive(true);  
+            
+            CorrectPanel.SetActive(true);
         }  
         else
         WrongPanel.SetActive(true);
     }
-
 }
