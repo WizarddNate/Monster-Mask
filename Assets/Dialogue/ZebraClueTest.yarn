@@ -69,10 +69,17 @@ Phantom: What I'm saying is you've got this. Get back out there detective!
 
 title: Phantom
 ---
+<<if $timesSpokenOne == 0>>
+Phantom: Oh me? I'm just here to freshen up.
+Phantom: This {$drinkOne} is pretty great, you should talk to the wolf-man at the bar!
+<<else>>
 Phantom: You hear lot's of things when you're a ghost like me!
-Phantom: For one, I head that the monster who has a pet {$petThree} is directly to the right of the monster who east {$foodTwo}
+Phantom: For one, I head that the monster who has a pet {$petThree} is directly to the right of the monster who eats {$foodTwo}
 Phantom: Oh, and one other thing:
 Phantom: The monster who has a pet {$petThree} is two rooms to the right of the monster who likes {$hobbyTwo}.
+Phantom: (That's counting the ballroom)
+<<endif>>
+<<set $timesSpokenOne = $timesSpokenOne + 1>>
 ===
 
 title: Mummy
@@ -84,6 +91,7 @@ Mummy: Find who did this, and there will be untold riches your way Mr. Blob.
 Mummy: I have to keep reminding people about the no pets in the dining room policy. 
 Mummy: SOMEONE keeps sharing {$foodThree} with their {$petThree}
 <<endif>>
+<<set $timesSpokenTwo = $timesSpokenTwo + 1>>
 ===
 
 title: Vampire
@@ -100,8 +108,13 @@ Vampire: That the monsters who eats {$foodOne} is somewhere to the right of the 
 
 title: Centaur
 ---
+<<if $timesSpokenThree == 0>>
+Centaur: This {$drinkThree} is amazing, it goes great with the {$foodThree}!
+<<else>>
 Centaur: I'm not one for gossip, but if it helps the case:
 Centaur: I heard that the monster who drinks {$drinkFour} is to the left of the monster who eats {$foodTwo}
+<<endif>>
+<<set $timesSpokenFour = $timesSpokenFour + 1>>
 ===
 
 title: Werewolf
