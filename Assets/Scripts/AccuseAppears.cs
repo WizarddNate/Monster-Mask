@@ -10,6 +10,9 @@ public class AccuseAppears : MonoBehaviour
     bool isInRange;
     bool isSpeaking;
 
+    public AudioSource investigation;
+    public AudioSource accuse;
+
     void Start()
     {
         if (charCol == null)
@@ -59,5 +62,7 @@ public class AccuseAppears : MonoBehaviour
     public void StartDialogue()
     {
         AccusePanel.SetActive(true);
+        investigation.mute = !investigation.mute;
+        accuse.mute = !accuse.mute;
     }
 }
