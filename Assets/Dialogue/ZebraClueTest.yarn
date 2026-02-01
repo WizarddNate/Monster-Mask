@@ -7,6 +7,41 @@
 <<declare $drinkOne = "">>
 <<declare $hobbyOne = "">>
 <<declare $petOne = "">>
+
+<<declare $speciesTwo = "Mummy">>
+<<declare $nameTwo = "">>
+<<declare $foodTwo = "">>
+<<declare $drinkTwo = "">>
+<<declare $hobbyTwo = "">>
+<<declare $petTwo = "">>
+
+<<declare $speciesThree = "Vampire">>
+<<declare $nameThree = "">>
+<<declare $foodThree = "">>
+<<declare $drinkThree = "">>
+<<declare $hobbyThree = "">>
+<<declare $petThree = "">>
+
+<<declare $speciesFour = "Centaur">>
+<<declare $nameFour = "">>
+<<declare $foodFour = "">>
+<<declare $drinkFour = "">>
+<<declare $hobbyFour = "">>
+<<declare $petFour = "">>
+
+<<declare $speciesFive = "Werewolf">>
+<<declare $nameFive = "">>
+<<declare $foodFive = "">>
+<<declare $drinkFive = "">>
+<<declare $hobbyFive = "">>
+<<declare $petFive = "">>
+
+<<declare $speciesSix = "Alien">>
+<<declare $nameSix = "">>
+<<declare $foodSix = "">>
+<<declare $drinkSix = "">>
+<<declare $hobbySix = "">>
+<<declare $petSix = "">>
 ===
 
 title: ZebraClueTest
@@ -32,7 +67,9 @@ sample text
 
 title: Vampire
 ---
-sample text
+Vampire: I love the {$foodThree}, it's my favorite! 
+Vampire: It pairs so nicely with the {$drinkThree}
+
 ===
 
 title: Centaur
@@ -42,7 +79,8 @@ sample text
 
 title: Werewolf
 ---
-sample text
+Werewolf: The {$speciesFour} loves to drink {$drinkFour}.
+Werewolf: He's built up quite a tab too! Har har har!
 ===
 
 title: Alien
