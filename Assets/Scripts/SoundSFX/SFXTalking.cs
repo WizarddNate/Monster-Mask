@@ -5,12 +5,64 @@ using UnityEngine.UI;
 
 public class SFXTalking : MonoBehaviour
 {
+    public DialoguePopup dPop;
+
     [SerializeField] private AudioClip[] phantomClips;
     [SerializeField] private AudioClip[] mummyClips;
     [SerializeField] private AudioClip[] vampireClips;
     [SerializeField] private AudioClip[] centaurClips;
     [SerializeField] private AudioClip[] werewolfClips;
     [SerializeField] private AudioClip[] alienClips;
+
+    public string monster;
+
+    void Update()
+    {
+        
+        dPop = GetComponent<DialoguePopup>();
+
+        if (dPop != null)
+        {
+            monster = dPop.MonsterName;
+        }
+
+    }
+
+    public void MonTalk()
+    {
+        
+
+        if (monster != null)
+        {
+            if (monster == "Werewolf")
+            {
+                WerewolfTalking();
+            }
+            else if (monster == "Vampire")
+            {
+                VampireTalking();
+            }
+            else if (monster == "ZebraClueTest")
+            {
+                CentaurTalking();
+            }
+            else if (monster == "Mummy")
+            {
+                MummyTalking();
+            }
+            else if (monster == "Alien")
+            {
+                AlienTalking();
+            }
+            else if (monster == "Phantom")
+            {
+                PhantomTalking();
+            }
+        }
+
+
+        
+    }
 
 
     public void PhantomTalking()
