@@ -30,24 +30,24 @@ public class StartMenuUI : MonoBehaviour
 
     public void FadeOut()
     {
-        StartCoroutine(FadeOutCoroutine());
+//        StartCoroutine(FadeOutCoroutine());
     }
 
-    private IEnumerator FadeOutCoroutine()
-    {
-        float startAlpha = ggjLogo.alpha;
-        float timer = 0f;
+    // private IEnumerator FadeOutCoroutine()
+    // {
+    //     float startAlpha = ggjLogo.alpha;
+    //     float timer = 0f;
 
-        while (timer < fadeOutTime)
-        {
-            timer += Time.deltaTime;
-            ggjLogo.alpha = Mathf.Lerp(startAlpha, 0f, timer / fadeOutTime);
-            yield return null;
-        }
+    //     while (timer < fadeOutTime)
+    //     {
+    //         timer += Time.deltaTime;
+    //         ggjLogo.alpha = Mathf.Lerp(startAlpha, 0f, timer / fadeOutTime);
+    //         yield return null;
+    //     }
 
-        ggjLogo.alpha = 0f;
-        //gameObject.SetActive(false);
-    }
+    //     ggjLogo.alpha = 0f;
+    //     //gameObject.SetActive(false);
+    // }
 
     // public void FadeIn()
     // {
