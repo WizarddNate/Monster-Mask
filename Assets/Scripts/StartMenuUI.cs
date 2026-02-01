@@ -1,9 +1,12 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StartMenuUI : MonoBehaviour
 {
+    public string ProtoLevel;
+
     [SerializeField] private AudioClip thunder_quit;
     [SerializeField] private AudioClip[] startGameClips;
     public bool quittersTalk = false;
@@ -75,13 +78,13 @@ public class StartMenuUI : MonoBehaviour
     public void OnStartButton()
     {
         SoundFXManager.instance.PlayRandomSoundFXClip(startGameClips, transform, 1f);
-        if (letsGo == false)
-        {
-            startTimer = 0;
-            letsGo = true;
-        }
+        // if (letsGo == false)
+        // {
+        //     startTimer = 0;
+        //     letsGo = true;
+        // }
 
-
+        Invoke(nameof(LoadSceneByName), 0.8f);
     }
 
     public void OnQuitButton()
@@ -106,8 +109,14 @@ public class StartMenuUI : MonoBehaviour
         startTimer += Time.deltaTime; 
         if (startTimer >= 1 && letsGo == true)
         {
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex + 1);
+            //LoadSceneByName();
         }
+    }
+
+    public void LoadSceneByName()
+    {
+        // Debug.Log ("pre");
+        SceneManager.LoadScene("ProtoLevel");
+        // Debug.Log ("post");
     }
 }
