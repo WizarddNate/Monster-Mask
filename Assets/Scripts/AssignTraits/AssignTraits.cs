@@ -147,7 +147,7 @@ public class AssignTraits : MonoBehaviour
 
         if (iterator == 1)
         {
-            nameOne =  charaName;
+            nameOne = charaName;
             speciesOne = chosenChara;
             drinkOne = chosenDrink;
             foodOne = chosenFood;
