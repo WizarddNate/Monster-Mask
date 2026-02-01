@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class ZebraPuzzle : MonoBehaviour
@@ -30,6 +31,13 @@ public class ZebraPuzzle : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(DelayedStart());
+    }
+
+    IEnumerator DelayedStart()
+    {
+        yield return new WaitForSeconds(0.1f); // wait 2 seconds
+
         CreateSuspects();
         AssignAttributesFromAssignTraits();
         ChooseKiller();
@@ -39,6 +47,7 @@ public class ZebraPuzzle : MonoBehaviour
         GenerateRoomClues();
         PrintMysteryToConsole();
     }
+
 
     void CreateSuspects()
     {
@@ -102,41 +111,25 @@ public class ZebraPuzzle : MonoBehaviour
         Suspect s3 = suspects[2];
         Suspect s4 = suspects[3];
 
-        List<AttributePick> attrs = new List<AttributePick>
-        {
-            new AttributePick { getter = x => x.drink, describe = v => $"drinks {v}" },
-            new AttributePick { getter = x => x.food, describe = v => $"eats {v}" },
-            new AttributePick { getter = x => x.Pet, describe = v => $"has a {v}" },
-            new AttributePick { getter = x => x.Hobby, describe = v => $"likes {v}" },
-            new AttributePick { getter = x => x.smoke, describe = v => $"smokes {v}" },
-            new AttributePick { getter = x => x.MaritalStatus, describe = v => $"has a relationship status of {v}" }
-        };
 
-        var clue1 = PickAndRemoveAttribute(attrs);
-        var clue2 = PickAndRemoveAttribute(attrs);
-        var clue3 = PickAndRemoveAttribute(attrs);
-        var clue4 = PickAndRemoveAttribute(attrs);
-        var clue5 = PickAndRemoveAttribute(attrs);
-        var clue6 = PickAndRemoveAttribute(attrs);
 
-        clues.Add($"The {s3.species} {clue1.describe(clue1.getter(s3))}.");
-        clues.Add($"The {s4.species} {clue2.describe(clue2.getter(s4))}.");
-        clues.Add($"The {s3.species} {clue2.describe(clue2.getter(s3))}.");
-        clues.Add($"The monster who {clue3.describe(clue3.getter(s2))} also {clue1.describe(clue1.getter(s2))}.");
-        clues.Add($"The monster who {clue1.describe(clue1.getter(s4))} is somewhere to the right of the monster who {clue3.describe(clue3.getter(s3))}.");
-        clues.Add($"The monster who {clue2.describe(clue2.getter(s1))} is immediately to the left of the monster who {clue1.describe(clue1.getter(s2))}.");
-        clues.Add($"The {s1.species} {clue4.describe(clue4.getter(s1))}.");
-        clues.Add($"The monster who {clue3.describe(clue3.getter(s3))} is immediately to the right of the monster who {clue4.describe(clue4.getter(s2))}.");
-        clues.Add($"The monster who {clue4.describe(clue4.getter(s4))} also {clue3.describe(clue3.getter(s4))}.");
-
+        clues.Add($"The {s3.species} eats {s3.food}.");
+        clues.Add($"The {s4.species} drinks {s4.drink}.");
+        clues.Add($"The {s3.species} drinks {s3.drink}.");
+        clues.Add($"The monster who has a {s2.Pet} also eats {s2.food}.");
+        clues.Add($"The monster who eats {s4.food} is somewhere to the right of the monster who has a {s3.Pet}.");
+        clues.Add($"The monster who drinks {s1.drink} is immediately to the left of the monster who eats {s2.food}.");
+        clues.Add($"The {s1.species} likes {s1.Hobby}.");
+        clues.Add($"The monster who has a {s3.Pet} is immediately to the right of the monster who {s2.Hobby}.");
+        clues.Add($"The monster who likes {s4.Hobby} also has a {s4.Pet}.");
         if (s1.isKiller)
-            clues.Add($"The killer {clue3.describe(clue3.getter(s1))}.");
+            clues.Add($"The killer has a {s1.Pet}.");
         else if (s2.isKiller)
-            clues.Add($"The killer {clue2.describe(clue2.getter(s2))}.");
+            clues.Add($"The killer drinks {s2.drink}.");
         else if (s3.isKiller)
-            clues.Add($"The killer {clue3.describe(clue3.getter(s3))}.");
+            clues.Add($"The killer has a {s3.Pet}.");
         else
-            clues.Add($"The killer {clue4.describe(clue4.getter(s4))}.");
+            clues.Add($"The killer likes {s4.Hobby}.");
     }
 
     void PrintMysteryToConsole()
