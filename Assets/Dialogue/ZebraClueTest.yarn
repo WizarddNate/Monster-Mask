@@ -1,13 +1,51 @@
 ﻿title: Setup
 ---
-<<declare $monster1 = "">>
+/// VARIABLES ///
+<<declare $speciesOne = "Phantom">>
+<<declare $nameOne = "">>
+<<declare $foodOne = "">>
+<<declare $drinkOne = "">>
+<<declare $hobbyOne = "">>
+<<declare $petOne = "">>
 ===
 
 title: ZebraClueTest
 ---
-{$monster1}: Hey there detective, staying sharp?
-It's me, Mr. {$monster1}!
-{$monster1}: Between you and me... Im pretty nervous about this.
+{$speciesOne}: Hey there detective, staying sharp?
+Phantom: I'm just planning on minding my own in here. I really like the {$foodOne}, it pairs nicely with the {$drinkOne}.
+{$speciesOne}: Between you and me... Im pretty nervous about this.
+Phantom: But you're really good at what you do. Like I'm good at {$hobbyOne}!
+Phantom: What I'm saying is you've got this. Get back out there detective!
 
 //Vampire: Just between you and me... I heard a rumor that {get_player_name()} only has {$player_coins} coins to his name.
+===
+
+title: Phantom
+---
+sample text
+===
+
+title: Mummy
+---
+sample text
+===
+
+title: Vampire
+---
+sample text
+===
+
+title: Centaur
+---
+sample text
+===
+
+title: Werewolf
+---
+sample text
+===
+
+title: Alien
+---
+sample text
 ===
