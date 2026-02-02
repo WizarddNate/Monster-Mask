@@ -148,12 +148,12 @@ public class ZebraPuzzle : MonoBehaviour
 
         clues.Add($"The {ct.species} eats {ct.food}."); //spawn food and drink on table in lounge
         clues.Add($"The phantom drinks {pt.drink}."); //drink spawn in bedroom
-        clues.Add($"The centaur drinks {ct.drink}.");
+        clues.Add($"The centaur drinks {ct.drink}."); //spawn drink
         clues.Add($"The monster who has a {vp.Pet} also eats {vp.food}."); ///I have to keep reminding people about the no pets in the dining room policy. SOMEONE keeps sharing {food} with their {pet}.
-        clues.Add($"The monster who eats {pt.food} is somewhere to the right of the monster who has a {ct.Pet}."); //  
-        clues.Add($"The monster who drinks {ww.drink} is immediately to the left of the monster who eats {vp.food}.");
+        clues.Add($"The monster who eats {pt.food} is somewhere to the right of the monster who has a {ct.Pet}."); //  vampire's hint
+        clues.Add($"The monster who drinks {ww.drink} is immediately to the left of the monster who eats {vp.food}."); //Centaur's hint
         clues.Add($"The {ww.species} likes {ww.Hobby}."); ///werewolf talks about hobby when asked 
-        clues.Add($"The monster who has a {ct.Pet} is two rooms to the right of the monster who {vp.Hobby}."); 
+        clues.Add($"The monster who has a {ct.Pet} is two rooms to the right of the monster who {vp.Hobby}."); //phantom hobby
         clues.Add($"The monster who likes {pt.Hobby} also has a {pt.Pet}."); //i heard a rumor that...
 
         

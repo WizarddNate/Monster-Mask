@@ -74,9 +74,7 @@ Phantom: Oh me? I'm just here to freshen up.
 Phantom: This {$drinkOne} is pretty great, you should talk to the wolf-man at the bar!
 <<else>>
 Phantom: You hear lot's of things when you're a ghost like me!
-Phantom: For one, I heard that the monster who has a pet {$petThree} is directly to the right of the monster who eats {$foodTwo}.
-Phantom: Oh, and one other thing:
-Phantom: The monster who has a pet {$petThree} is two rooms to the right of the monster who likes {$hobbyTwo}.
+Phantom: For one, I heard that the monster who has a pet {$petThree} is two rooms to the right of the monster who eats {$foodTwo}.
 Phantom: (That's counting the ballroom)
 <<endif>>
 <<set $timesSpokenOne = $timesSpokenOne + 1>>
@@ -89,7 +87,7 @@ Mummy: Great. The party of the century has been ruined.
 Mummy: Find who did this, and there will be untold riches your way Mr. Blob.
 <<else>>
 Mummy: I have to keep reminding people about the no pets in the dining room policy. 
-Mummy: a CERTAIN SOMEONE in there keeps sharing {$foodThree} with his {$petThree}.
+Mummy: a CERTAIN SOMEONE in there keeps sharing {$foodTwo} with his {$petTwo}.
 <<endif>>
 <<set $timesSpokenTwo = $timesSpokenTwo + 1>>
 ===
